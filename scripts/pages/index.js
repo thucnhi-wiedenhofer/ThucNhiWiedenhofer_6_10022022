@@ -1,5 +1,5 @@
     async function getPhotographers() {
-        //récupère les informations sur chaque photographe
+        //récupère les informations des photographes dans phototographers.json
   try {
     const response = await fetch("./data/photographers.json", {
       headers: {
@@ -32,7 +32,7 @@
           displayData(photographers);
         } catch (err) {
           // eslint-disable-next-line no-alert
-          alert("erreur systéme, le fichier json comporte des erreurs");
+          alert("erreur système, le fichier json comporte des erreurs");
         }
     }
     init();
