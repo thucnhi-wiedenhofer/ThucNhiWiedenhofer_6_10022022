@@ -3,7 +3,7 @@
   try {
     const response = await fetch("./data/photographers.json", {
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json",        
         Accept: "application/json",
       },
     });
@@ -13,7 +13,7 @@
   } catch (error) {
     console.error(error);
   }
-}
+}  
 
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
