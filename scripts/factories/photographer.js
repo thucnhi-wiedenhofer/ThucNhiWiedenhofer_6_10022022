@@ -2,6 +2,18 @@ function photographerFactory(data) {
     const { name, portrait, id, city, country, tagline, price } = data;
 
     const picture = `assets/photographers/${portrait}`;
+    /*
+    const link = document.createElement('a');
+    link.setAttribute('role', 'link');
+    link.setAttribute('href', `photographer.html?id=${id}`);
+    link.setAttribute('aria-label', `visiter la page de ${name}`);
+
+    article.appendChild(link);
+    link.appendChild(img);
+    link.appendChild(h2);
+    article.appendChild(h3);
+    article.appendChild(p);
+    article.appendChild(span);*/
     
 
     function getUserCardDOM() {
