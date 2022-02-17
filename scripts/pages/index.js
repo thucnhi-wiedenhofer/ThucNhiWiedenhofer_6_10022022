@@ -14,7 +14,7 @@
     console.error(error);
   }
 }  
-
+    //fonction pour afficher les informations des photographes dans landing page
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
 
@@ -27,7 +27,7 @@
 
     async function init() {
         try {
-          // Récupère les datas des photographes
+          // Récupère les datas des photographes et les affiche
           const { photographers } = await getPhotographers();
           displayData(photographers);
         } catch (err) {
