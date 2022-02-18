@@ -1,5 +1,5 @@
-    async function getPhotographers() {
-        //récupère les informations des photographes dans phototographers.json
+async function getPhotographers() {
+        // récupère les informations des photographes dans phototographers.json
   try {
     const response = await fetch("./data/photographers.json", {
       headers: {
@@ -20,10 +20,10 @@
 
         photographers.forEach((photographers) => {
             const photographerModel = photographerFactory(photographers);
-            const userCardDOM = photographerModel.getUserCardDOM();
-            photographersSection.appendChild(userCardDOM);
+            const CardDOM = photographerModel.getCardDOM();
+            photographersSection.appendChild(CardDOM);
         });
-    };
+    }
 
     async function init() {
         try {
@@ -31,10 +31,12 @@
           const { photographers } = await getPhotographers();
           displayData(photographers);
         } catch (err) {
-          // eslint-disable-next-line no-alert
+          // message erreur
           alert("erreur système, le fichier json comporte des erreurs");
         }
     }
     init();
+
+   
       
     

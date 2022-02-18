@@ -1,22 +1,10 @@
+// Factory pour créer une card
 function photographerFactory(data) {
     const { name, portrait, id, city, country, tagline, price } = data;
 
-    const picture = `assets/photographers/${portrait}`;
-    /*
-    const link = document.createElement('a');
-    link.setAttribute('role', 'link');
-    link.setAttribute('href', `photographer.html?id=${id}`);
-    link.setAttribute('aria-label', `visiter la page de ${name}`);
+    const picture = `assets/photographers/${portrait}`;    
 
-    article.appendChild(link);
-    link.appendChild(img);
-    link.appendChild(h2);
-    article.appendChild(h3);
-    article.appendChild(p);
-    article.appendChild(span);*/
-    
-
-    function getUserCardDOM() {
+    function getCardDOM() {
         const article = document.createElement( 'article' );        
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
@@ -28,7 +16,7 @@ function photographerFactory(data) {
         link.setAttribute('aria-label', `visiter la page de ${name}`);
 
         const h4 = document.createElement( 'h4');
-        h4.textContent = [city +', '+country];
+        h4.textContent = `${city}, ${country}`;
         const p = document.createElement('p');
         p.textContent = tagline;
         const span = document.createElement('span');
@@ -40,7 +28,8 @@ function photographerFactory(data) {
         article.appendChild(h4);
         article.appendChild(p);
         article.appendChild(span);
-        return (article);
+        return article;
     }
-    return { name, picture, getUserCardDOM }
+    return { name, picture, getCardDOM }
 }
+
