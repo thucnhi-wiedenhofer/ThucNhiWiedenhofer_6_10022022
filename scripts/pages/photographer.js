@@ -26,11 +26,13 @@ function getIdPhotographer() {
 }
 
 function getOnePhotographer(photographers, idPhotographer) {
+  // cherche l'id correspondant parmi les photographes
   const onePhotographer = photographers.photographers.find((item) => item.id === idPhotographer);
   return onePhotographer;
 }
 
 async function displayPhotographer(onePhotographer) {
+  // affiche dans photographer.html le photographe en utilisant la factory
   const photographerHeader = document.querySelector(".photograph-header");
   const photographerModel = photographerHeaderFactory(onePhotographer);
   const headerDOM = photographerModel.getHeaderDOM();
@@ -39,13 +41,13 @@ async function displayPhotographer(onePhotographer) {
 
 async function initialise(idPhotographer) {
   try {
-    // Récupère les datas des photographes et les affiche
+    // Récupère les datas du photographe de l'id correspondant et les affiche
     const photographers = await getPhotographers();
-    const onePhotographer = getOnePhotographer(photographers, idPhotographer);    
+    const onePhotographer = getOnePhotographer(photographers, idPhotographer);
     displayPhotographer(onePhotographer);
 
   } catch (err) {
-    // eslint-disable-next-line no-alert
+    // message erreur
     alert("erreur système, le fichier json comporte des erreurs");
   }
 }

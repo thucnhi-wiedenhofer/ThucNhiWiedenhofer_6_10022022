@@ -9,12 +9,21 @@ main {
   align-items: center;
 }
 
-.photograph-header {
+.photograph-header article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   background-color: #fafafa;
   min-height: 313px;
   max-width: 1240px;
   margin: 30px auto;
+  padding: 0 40px;
+}
+
+.photograph-header h1{
+  font-size: 64px;
+  margin-bottom: 0px;
 }
 
 .contact_button {
