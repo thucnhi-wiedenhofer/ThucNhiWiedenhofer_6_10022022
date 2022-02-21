@@ -5,18 +5,18 @@ const idPhotographer = getIdPhotographer();
 async function getPhotographers() {
   // récupère les informations des photographes dans phototographers.json
   try {
-  const response = await fetch("./data/photographers.json", {
-  headers: {
-    "Content-Type": "application/json",        
-    Accept: "application/json",
-  },
-  });
-  const photographers = await response.json();
-  return photographers;
+    const response = await fetch("./data/photographers.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    const photographers = await response.json();
+    return photographers;
   } catch (error) {
-  console.error(error);
+    console.error(error);
   }
-} 
+}
 
 function getIdPhotographer() {
   //recupère l'id du photographe sélectionné
@@ -37,6 +37,10 @@ async function displayPhotographer(onePhotographer) {
   const photographerModel = photographerHeaderFactory(onePhotographer);
   const headerDOM = photographerModel.getHeaderDOM();
   photographerHeader.appendChild(headerDOM);
+
+  const badgeModel = photographerHeaderFactory(onePhotographer);
+  const badgeDOM = badgeModel.getBadgeDOM();
+  photographerHeader.appendChild(badgeDOM);
 }
 
 async function initialise(idPhotographer) {

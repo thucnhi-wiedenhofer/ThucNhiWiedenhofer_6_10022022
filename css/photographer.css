@@ -8,23 +8,31 @@ main {
   justify-content: center;
   align-items: center;
 }
+header a{
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
 
 .photograph-header article {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  background-color: #fafafa;
+  background-color: #fafafa57;
   min-height: 313px;
-  max-width: 1240px;
+  width: 1240px;
   margin: 30px auto;
-  padding: 0 40px;
+  padding: 15px 30px 40px 50px;
+  color: var(--grey);
+}
+.photograph-header img {
+  margin-top: 40px !important;
 }
 
 .photograph-header h1{
   font-size: 64px;
   margin-bottom: 0px;
 }
+
 
 .contact_button {
   font-size: 20px;
@@ -34,14 +42,30 @@ main {
   width: 170px;
   height: 70px;
   border: none;
-  background-color: #901c1c;
+  background-color: var(--primary);
   border-radius: 5px;
-  cursor: pointer;
+  cursor: pointer;  
+  position: absolute;
+  top: 280px;
+  right: 45%;
+}
+
+.badge {
+  border: none;
+  background-color: var(--tertiary);
+  
+  
+
+}
+.badge span{
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--black);
 }
 
 .modal {
   border-radius: 5px;
-  background-color: #db8876;
+  background-color: var(--tertiary);
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -91,4 +115,48 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+}
+/*css only for medium screen  */
+@media screen and (max-width: 1280px) {
+  .photograph-header article {
+    align-items: center;
+    width: 900px;
+    min-height: 350px;
+  }
+  .photograph-header h1{
+    font-size: 40px;
+  }
+  .contact_button {
+    top: 390px;
+  }
+}
+
+  /*css only for tablet and Mobile  */
+@media screen and (max-width: 834px) {
+  .photograph-header article {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 480px;
+  }
+  .photograph-header div:nth-child(1) {   
+    margin-bottom: 80px;
+    order: 2;
+    width: 90%;
+  }
+  .photograph-header img:nth-child(2) {
+    align-items: center;
+    order: 1;
+  }
+  .contact_button {
+    top: 610px;
+    right: 38%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact_button {
+    top: 620px;
+    right: 25%;
+  }
 }
