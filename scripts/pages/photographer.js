@@ -1,5 +1,6 @@
 // code JavaScript lié à la page photographer.html
 
+
 const idPhotographer = getIdPhotographer();
 
 async function getPhotographers() {
@@ -43,12 +44,23 @@ async function displayPhotographer(onePhotographer) {
   photographerHeader.appendChild(badgeDOM);
 }
 
+async function displayContactModal(onePhotographer) {
+  const contactModal = document.querySelector('#contact_modal');
+  const modalModel = contactFormFactory(onePhotographer);
+  const modalDOM = modalModel.getModalDOM();
+  contactModal.appendChild(modalDOM);
+
+}
+
 async function initialise(idPhotographer) {
   try {
-    // Récupère les datas du photographe de l'id correspondant et les affiche
+    // Récupère les datas du photographe de l'id correspondant 
     const photographers = await getPhotographers();
     const onePhotographer = getOnePhotographer(photographers, idPhotographer);
+    // Affiche photograph-header et badge:
     displayPhotographer(onePhotographer);
+    // Affiche modal formulaire de contact:
+    displayContactModal(onePhotographer);
 
   } catch (err) {
     // message erreur
