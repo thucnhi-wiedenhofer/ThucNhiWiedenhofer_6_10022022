@@ -1,7 +1,9 @@
 // Factory pour créer une section de photographe-header dans la page photographer.js
 
 function photographerHeaderFactory(data) {
-  const { name, portrait, id, city, country, tagline, price } = data;
+  const {
+    name, portrait, id, city, country, tagline, price,
+  } = data;
 
   const picture = `assets/photographers/${portrait}`;
 
@@ -15,7 +17,7 @@ function photographerHeaderFactory(data) {
     const p = document.createElement('p');
     p.textContent = tagline;
     const img = document.createElement('img');
-    img.setAttribute("src", picture);
+    img.setAttribute('src', picture);
 
     div.appendChild(h1);
     div.appendChild(h3);
@@ -27,12 +29,13 @@ function photographerHeaderFactory(data) {
 
   function getBadgeDOM() {
     const div = document.createElement('div');
-    div.classList.add("badge");
+    div.classList.add('badge');
     const span = document.createElement('span');
     span.textContent = `${price}€/jour`;
     div.appendChild(span);
     return div;
   }
-  return { name, picture, getHeaderDOM, getBadgeDOM };
-
+  return {
+    name, picture, getHeaderDOM, getBadgeDOM,
+  };
 }

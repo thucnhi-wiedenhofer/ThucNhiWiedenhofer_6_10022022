@@ -54,7 +54,7 @@ header a{
 
 main .contact_button {
   position: absolute;
-  top: 280px;
+  top: 290px;
   right: 45%;
 }
 
@@ -140,6 +140,7 @@ form input {
   border: none;
   border-radius: 5px;
   padding:10px;
+  margin-bottom: 10px;  
 }
 
 form textarea {
@@ -148,30 +149,6 @@ form textarea {
   border: none;
   border-radius: 5px;
   margin-bottom: 20px;
-}
-.formData {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 0px;
-}
-
-/* Message error for form validation */
-.formData[data-error]::after {
-  content: attr(data-error);
-  font-size: 10px;
-  color: #e54858;
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
-}
-.formData[data-error-visible="true"]::after {
-  opacity: 1;
 }
 
 /*css only for medium screen  */

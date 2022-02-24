@@ -1,15 +1,14 @@
+/* eslint-disable no-undef */
 // code JavaScript lié à la page photographer.html
 
-
-const idPhotographer = getIdPhotographer();
-
+// eslint-disable-next-line consistent-return
 async function getPhotographers() {
   // récupère les informations des photographes dans phototographers.json
   try {
-    const response = await fetch("./data/photographers.json", {
+    const response = await fetch('./data/photographers.json', {
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
     });
     const photographers = await response.json();
@@ -20,21 +19,22 @@ async function getPhotographers() {
 }
 
 function getIdPhotographer() {
-  //recupère l'id du photographe sélectionné
+  // recupère l'id du photographe sélectionné
   const parameterURL = new URLSearchParams(window.location.search);
   const idPhotographer = parseInt(parameterURL.get('id'), 10);
   return idPhotographer;
 }
+const idPhotographer = getIdPhotographer();
 
-function getOnePhotographer(photographers, idPhotographer) {
+function getOnePhotographer(photographers, id) {
   // cherche l'id correspondant parmi les photographes
-  const onePhotographer = photographers.photographers.find((item) => item.id === idPhotographer);
+  const onePhotographer = photographers.photographers.find((item) => item.id === id);
   return onePhotographer;
 }
 
 async function displayPhotographer(onePhotographer) {
   // affiche dans photographer.html le photographe en utilisant la factory
-  const photographerHeader = document.querySelector(".photograph-header");
+  const photographerHeader = document.querySelector('.photograph-header');
   const photographerModel = photographerHeaderFactory(onePhotographer);
   const headerDOM = photographerModel.getHeaderDOM();
   photographerHeader.appendChild(headerDOM);
@@ -49,22 +49,20 @@ async function displayContactModal(onePhotographer) {
   const modalModel = contactFormFactory(onePhotographer);
   const modalDOM = modalModel.getModalDOM();
   contactModal.appendChild(modalDOM);
-
 }
 
-async function initialise(idPhotographer) {
+async function initialise(id) {
   try {
-    // Récupère les datas du photographe de l'id correspondant 
+    // Récupère les datas du photographe de l'id correspondant
     const photographers = await getPhotographers();
-    const onePhotographer = getOnePhotographer(photographers, idPhotographer);
+    const onePhotographer = getOnePhotographer(photographers, id);
     // Affiche photograph-header et badge:
     displayPhotographer(onePhotographer);
     // Affiche modal formulaire de contact:
     displayContactModal(onePhotographer);
-
-  } catch (err) {
-    // message erreur
-    alert("erreur système, le fichier json comporte des erreurs");
+  } catch (error) {
+    console.error(error);
   }
 }
+
 initialise(idPhotographer);
