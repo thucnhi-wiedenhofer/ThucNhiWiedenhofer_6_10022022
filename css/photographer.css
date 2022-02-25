@@ -151,6 +151,11 @@ form textarea {
   margin-bottom: 20px;
 }
 
+.card-header img {
+  width: 400px;
+  height: auto;
+}
+
 /*css only for medium screen  */
 @media screen and (max-width: 1280px) {
   .photograph-header article {

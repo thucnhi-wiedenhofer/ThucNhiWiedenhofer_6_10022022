@@ -32,6 +32,13 @@ function getOnePhotographer(photographers, id) {
   return onePhotographer;
 }
 
+function getOnePortefolio(photographers, id) {
+  const onePortefolio = photographers.media.filter(
+    (item) => item.photographerId === id,
+  );
+  return onePortefolio;
+}
+
 async function displayPhotographer(onePhotographer) {
   // affiche dans photographer.html le photographe en utilisant la factory
   const photographerHeader = document.querySelector('.photograph-header');
@@ -51,15 +58,28 @@ async function displayContactModal(onePhotographer) {
   contactModal.appendChild(modalDOM);
 }
 
+async function displayCardMedia(onePortefolio) {
+  const portefolio = document.querySelector('.portefolio');
+  onePortefolio.forEach((element) => {
+    const cardModel = cardMediaFactory(element);
+    const cardDOM = cardModel.getCardMedia();
+    portefolio.appendChild(cardDOM);
+  });
+}
+
 async function initialise(id) {
   try {
     // Récupère les datas du photographe de l'id correspondant
     const photographers = await getPhotographers();
     const onePhotographer = getOnePhotographer(photographers, id);
+    const onePortefolio = getOnePortefolio(photographers, idPhotographer);
+
     // Affiche photograph-header et badge:
     displayPhotographer(onePhotographer);
     // Affiche modal formulaire de contact:
     displayContactModal(onePhotographer);
+    // Affiche les cards media du portefolio:
+    displayCardMedia(onePortefolio);
   } catch (error) {
     console.error(error);
   }
