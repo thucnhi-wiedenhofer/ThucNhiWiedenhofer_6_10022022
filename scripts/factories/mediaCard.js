@@ -35,6 +35,7 @@ function cardMediaFactory(data) {
     span.textContent = likes;
     const icon = document.createElement('i');
     icon.className = 'fa fa-heart';
+    icon.setAttribute('aria-hidden', 'true');
 
     card.appendChild(cardHeader);
     cardHeader.appendChild(link);

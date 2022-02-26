@@ -151,10 +151,58 @@ form textarea {
   margin-bottom: 20px;
 }
 
-.card-header img {
-  width: 400px;
-  height: auto;
+.portefolio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1240px;
+  margin-top: 70px;
+
 }
+.card {
+  width: 350px;
+  height: 351px;
+  margin-bottom: 30px;
+}
+
+.card-header img,
+.card-header video {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-body h3 {
+  width: 292px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.row {
+  width: 45px; 
+  display: flex; 
+  flex-direction: row;
+}
+
+.row span {
+  font-size: 24px;
+  color: var(--primary);  
+}
+
+.fa-heart {
+  font-size: 24px; 
+  cursor: pointer;
+  color: var(--primary);
+}
+
 
 /*css only for medium screen  */
 @media screen and (max-width: 1280px) {
@@ -183,6 +231,10 @@ form textarea {
   .modal label {
     font-size: 20px;
   }
+  .portefolio {
+    width: 900px;
+  }
+  
 }
 
   /*css only for tablet and Mobile  */
@@ -218,6 +270,10 @@ form textarea {
   .modal{
     min-width: 360px;
   }
+  .portefolio {
+    width: 350px;
+  }
+  
 }
 @media screen and (max-width: 480px) {
   main .contact_button {
