@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 // Factory pour créer une section de photographe-header dans la page photographer.js
 
-function photographerHeaderFactory(data) {
+function photographerProfil(data) {
   const {
     name, portrait, id, city, country, tagline, price,
   } = data;

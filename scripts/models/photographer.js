@@ -1,6 +1,6 @@
 // Factory pour créer une card
 // eslint-disable-next-line no-unused-vars
-function photographerFactory(data) {
+function photographer(data) {
   const {
     name, portrait, id, city, country, tagline, price,
   } = data;

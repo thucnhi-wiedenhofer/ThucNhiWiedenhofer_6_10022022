@@ -42,11 +42,11 @@ function getOnePortefolio(photographers, id) {
 async function displayPhotographer(onePhotographer) {
   // affiche dans photographer.html le photographe en utilisant la factory
   const photographerHeader = document.querySelector('.photograph-header');
-  const photographerModel = photographerHeaderFactory(onePhotographer);
+  const photographerModel = photographerProfil(onePhotographer);
   const headerDOM = photographerModel.getHeaderDOM();
   photographerHeader.appendChild(headerDOM);
 
-  const badgeModel = photographerHeaderFactory(onePhotographer);
+  const badgeModel = photographerProfil(onePhotographer);
   const badgeDOM = badgeModel.getBadgeDOM();
   photographerHeader.appendChild(badgeDOM);
 }
