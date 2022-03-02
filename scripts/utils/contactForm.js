@@ -17,7 +17,7 @@ function closeModal() {
 
 /** ******Affichage des champs saisie dans la console après
  * validation du formulaire de contact avec html5***** */
-function validContactForm() {
+/* function validContactForm() {
   const inputFirstname = document.getElementById('firstname');
   const inputLastname = document.getElementById('lastname');
   const inputEmail = document.getElementById('email');
@@ -27,12 +27,12 @@ function validContactForm() {
   console.log(inputLastname.value);
   console.log(inputEmail.value);
   console.log(inputMessage.value);
-}
+} */
 
 /** ******Validation du formulaire de contact***** */
 
 // Vérifie si le champs nom a au moins 2 lettres et pas de chiffres
-/* function validName(text, index) {
+function validName(text, index) {
   if (text.length < 2 || !/^[a-zA-Zéèàê][a-zA-Zéèàê' -]+$/.test(text)) {
     text.parentElement.setAttribute('data-error-visible', 'true');
   } else {
@@ -68,15 +68,21 @@ function validContactForm() {
   const inputMessage = document.getElementById('message');
 
   // si tous les champs n'ont pas d'erreur
-  if (validName(inputFirstname.value, 0)
-    && validName(inputLastname.value, 1)
-    && validEmail(inputEmail.value)
-    && validMessage(inputMessage.value)
-  ) {
-    // si valide, envoie contenu des champs dans la console
-    console.log(inputFirstname.value);
-    console.log(inputLastname.value);
-    console.log(inputEmail.value);
-    console.log(inputMessage.value);
+  validName(inputFirstname, 0);
+  validName(inputLastname, 1);
+  validEmail(inputEmail);
+  validMessage(inputMessage);
+
+  if (inputFirstname.parentElement.dataset.errorVisible === 'false'
+    && inputLastname.parentElement.dataset.errorVisible === 'false'
+    && inputEmail.parentElement.dataset.errorVisible === 'false'
+    && inputMessage.parentElement.dataset.errorVisible === 'false') {
+    {
+      // si valide, envoie contenu des champs dans la console
+      console.log(inputFirstname.value);
+      console.log(inputLastname.value);
+      console.log(inputEmail.value);
+      console.log(inputMessage.value);
+    }
   }
-} */
+}

@@ -8,17 +8,18 @@ function cardMedia(data) {
 
   function getCardMedia() {
     const card = document.createElement('div');
-    card.classList.add('card');
+    card.className = 'card';
 
     const cardHeader = document.createElement('div');
-    cardHeader.classList.add('card-header');
+    cardHeader.className = 'card-header';
+    cardHeader.setAttribute('id', `${id}-${photographerId}`);
 
     const cardBody = document.createElement('div');
-    cardBody.classList.add('card-body');
+    cardBody.className = 'card-body';
     const h3 = document.createElement('h3');
     h3.textContent = title;
     const div = document.createElement('div');
-    div.classList.add('row');
+    div.className = 'row';
     const span = document.createElement('span');
     span.setAttribute('id', `${id}`);
     span.textContent = likes;

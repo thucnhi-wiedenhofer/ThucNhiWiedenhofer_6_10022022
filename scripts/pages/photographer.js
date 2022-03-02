@@ -65,6 +65,11 @@ async function displayCardMedia(onePortefolio) {
     const cardModel = cardMedia(element);
     const cardDOM = cardModel.getCardMedia();
     portefolio.appendChild(cardDOM);
+    const mediaModel = mediaFactory(element);
+    const mediaDOM = mediaModel.getMedia();
+    const idMedia = `${element.id}-${element.photographerId}`;
+    const cardHeader = document.getElementById(idMedia);
+    cardHeader.appendChild(mediaDOM);
   });
 }
 
