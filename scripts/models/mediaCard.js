@@ -1,9 +1,9 @@
 // création card media du portefolio: photo ou video du photographe
 
 // eslint-disable-next-line no-unused-vars
-function cardMediaFactory(data) {
+function cardMedia(data) {
   const {
-    id, photographerId, title, image, video, likes,
+    id, photographerId, title, likes,
   } = data;
 
   function getCardMedia() {
@@ -12,18 +12,6 @@ function cardMediaFactory(data) {
 
     const cardHeader = document.createElement('div');
     cardHeader.classList.add('card-header');
-    const link = document.createElement('a');
-    link.setAttribute('href', '#');
-
-    if (image) {
-      const img = document.createElement('img');
-      img.setAttribute('src', `assets/images/${image}`);
-      link.appendChild(img);
-    } else if (video) {
-      const film = document.createElement('video');
-      film.setAttribute('src', `assets/images/${video}`);
-      link.appendChild(film);
-    }
 
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body');
@@ -32,13 +20,12 @@ function cardMediaFactory(data) {
     const div = document.createElement('div');
     div.classList.add('row');
     const span = document.createElement('span');
+    span.setAttribute('id', `${id}`);
     span.textContent = likes;
     const icon = document.createElement('i');
     icon.className = 'fa fa-heart';
-    icon.setAttribute('aria-hidden', 'true');
 
     card.appendChild(cardHeader);
-    cardHeader.appendChild(link);
     card.appendChild(cardBody);
     cardBody.appendChild(h3);
     cardBody.appendChild(div);

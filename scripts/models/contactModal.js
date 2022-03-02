@@ -1,7 +1,7 @@
-//  factory pour construire un formulaire de contac
+//  Constructor Pattern  pour construire une modale avec un formulaire de contact
 
 // eslint-disable-next-line no-unused-vars
-function contactFormFactory(data) {
+function contactForm(data) {
   const { name } = data;
 
   function getModalDOM() {
@@ -9,6 +9,7 @@ function contactFormFactory(data) {
     modal.classList.add('modal');
 
     const form = document.createElement('form');
+    form.setAttribute('id', 'contact_form');
     form.setAttribute('onsubmit', 'event.preventDefault(); validContactForm(); closeModal();');
 
     const headerForm = document.createElement('div');
@@ -21,6 +22,10 @@ function contactFormFactory(data) {
     const span = document.createElement('span');
     span.textContent = name;
 
+    const firstData = document.createElement('div');
+    firstData.classList.add('formData');
+    firstData.setAttribute('data-error', 'Veuillez entrer 2 caractères alphabétiques minimum.');
+    firstData.setAttribute('data-error-visible', 'false');
     const firstnameLabel = document.createElement('label');
     firstnameLabel.textContent = 'Prénom';
     firstnameLabel.setAttribute('for', 'prenom');
@@ -28,8 +33,11 @@ function contactFormFactory(data) {
     firstnameInput.setAttribute('type', 'text');
     firstnameInput.setAttribute('name', 'firstname');
     firstnameInput.setAttribute('id', 'firstname');
-    firstnameInput.required = true;
 
+    const lastData = document.createElement('div');
+    lastData.classList.add('formData');
+    lastData.setAttribute('data-error', 'Veuillez entrer 2 caractères alphabétiques minimum.');
+    lastData.setAttribute('data-error-visible', 'false');
     const lastnameLabel = document.createElement('label');
     lastnameLabel.textContent = 'Nom';
     lastnameLabel.setAttribute('for', 'nom');
@@ -37,8 +45,11 @@ function contactFormFactory(data) {
     lastnameInput.setAttribute('type', 'text');
     lastnameInput.setAttribute('name', 'lastname');
     lastnameInput.setAttribute('id', 'lastname');
-    lastnameInput.required = true;
 
+    const emailData = document.createElement('div');
+    emailData.classList.add('formData');
+    emailData.setAttribute('data-error', 'Veuillez entrer un email valide.');
+    emailData.setAttribute('data-error-visible', 'false');
     const emailLabel = document.createElement('label');
     emailLabel.textContent = 'Email';
     emailLabel.setAttribute('for', 'email');
@@ -46,15 +57,17 @@ function contactFormFactory(data) {
     emailInput.setAttribute('type', 'email');
     emailInput.setAttribute('name', 'email');
     emailInput.setAttribute('id', 'email');
-    emailInput.required = true;
 
+    const messageData = document.createElement('div');
+    messageData.classList.add('formData');
+    messageData.setAttribute('data-error', 'Veuillez entrer un message.');
+    messageData.setAttribute('data-error-visible', 'false');
     const messageLabel = document.createElement('label');
     messageLabel.textContent = 'Votre Message';
     messageLabel.setAttribute('for', 'message');
     const textarea = document.createElement('textarea');
     textarea.setAttribute('name', 'message');
     textarea.setAttribute('id', 'message');
-    textarea.required = true;
 
     const submit = document.createElement('button');
     submit.setAttribute('type', 'submit');
@@ -67,17 +80,21 @@ function contactFormFactory(data) {
     form.appendChild(headerForm);
     form.appendChild(span);
 
-    form.appendChild(firstnameLabel);
-    form.appendChild(firstnameInput);
+    form.appendChild(firstData);
+    firstData.appendChild(firstnameLabel);
+    firstData.appendChild(firstnameInput);
 
-    form.appendChild(lastnameLabel);
-    form.appendChild(lastnameInput);
+    form.appendChild(lastData);
+    lastData.appendChild(lastnameLabel);
+    lastData.appendChild(lastnameInput);
 
-    form.appendChild(emailLabel);
-    form.appendChild(emailInput);
+    form.appendChild(emailData);
+    emailData.appendChild(emailLabel);
+    emailData.appendChild(emailInput);
 
-    form.appendChild(messageLabel);
-    form.appendChild(textarea);
+    form.appendChild(messageData);
+    messageData.appendChild(messageLabel);
+    messageData.appendChild(textarea);
 
     form.appendChild(submit);
     return modal;

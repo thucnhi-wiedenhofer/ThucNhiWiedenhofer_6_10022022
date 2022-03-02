@@ -1,10 +1,12 @@
+/* eslint-disable no-undef */
+// eslint-disable-next-line consistent-return
 async function getPhotographers() {
-        // récupère les informations des photographes dans phototographers.json
+  // récupère les informations des photographes dans phototographers.json
   try {
-    const response = await fetch("./data/photographers.json", {
+    const response = await fetch('./data/photographers.json', {
       headers: {
-        "Content-Type": "application/json",        
-        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
     });
 
@@ -13,30 +15,25 @@ async function getPhotographers() {
   } catch (error) {
     console.error(error);
   }
-}  
-    //fonction pour afficher les informations des photographes dans landing page
-    async function displayData(photographers) {
-        const photographersSection = document.querySelector(".photographer_section");
+}
+// fonction pour afficher les informations des photographes dans landing page
+async function displayData(photographers) {
+  const photographersSection = document.querySelector('.photographer_section');
 
-        photographers.forEach((photographers) => {
-            const photographerModel = photographerFactory(photographers);
-            const CardDOM = photographerModel.getCardDOM();
-            photographersSection.appendChild(CardDOM);
-        });
-    }
+  photographers.forEach((users) => {
+    const photographerModel = photographerFactory(users);
+    const CardDOM = photographerModel.getCardDOM();
+    photographersSection.appendChild(CardDOM);
+  });
+}
 
-    async function init() {
-        try {
-          // Récupère les datas des photographes et les affiche
-          const { photographers } = await getPhotographers();
-          displayData(photographers);
-        } catch (err) {
-          // message erreur
-          alert("erreur système, le fichier json comporte des erreurs");
-        }
-    }
-    init();
-
-   
-      
-    
+async function init() {
+  try {
+    // Récupère les datas des photographes et les affiche
+    const { photographers } = await getPhotographers();
+    displayData(photographers);
+  } catch (error) {
+    console.error(error);
+  }
+}
+init();

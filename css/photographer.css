@@ -30,6 +30,10 @@ header a{
   margin-top: 15px;
 }
 
+.photograph-header p {
+  margin-left: 10px;
+}
+
 .photograph-header img {
   margin-top: 40px !important;
 }
@@ -75,6 +79,9 @@ main .contact_button {
 .badge span{
   font-size: 24px;
   font-weight: 500;
+  color: var(--black);
+}
+.badge .fa-heart {
   color: var(--black);
 }
 
@@ -151,6 +158,32 @@ form textarea {
   margin-bottom: 20px;
 }
 
+.formData {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 0px;
+}
+
+/* Message error for form validation */
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 14px;
+  color: var(--primary);
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[data-error-visible="true"]::after {
+  opacity: 1;
+}
+
+
 .portefolio {
   display: flex;
   flex-direction: row;
@@ -172,16 +205,17 @@ form textarea {
   width: 350px;
   height: 300px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .card-body {
+  width: 350px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
 }
 .card-body h3 {
-  width: 292px;
+  width: 265px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -190,17 +224,20 @@ form textarea {
   width: 45px; 
   display: flex; 
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .row span {
   font-size: 24px;
-  color: var(--primary);  
+  color: var(--primary);   
 }
 
 .fa-heart {
-  font-size: 24px; 
+  font-size: 24px!important; 
   cursor: pointer;
   color: var(--primary);
+  margin: 5px;
 }
 
 

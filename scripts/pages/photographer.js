@@ -53,15 +53,16 @@ async function displayPhotographer(onePhotographer) {
 
 async function displayContactModal(onePhotographer) {
   const contactModal = document.querySelector('#contact_modal');
-  const modalModel = contactFormFactory(onePhotographer);
+  const modalModel = contactForm(onePhotographer);
   const modalDOM = modalModel.getModalDOM();
   contactModal.appendChild(modalDOM);
 }
 
 async function displayCardMedia(onePortefolio) {
   const portefolio = document.querySelector('.portefolio');
+
   onePortefolio.forEach((element) => {
-    const cardModel = cardMediaFactory(element);
+    const cardModel = cardMedia(element);
     const cardDOM = cardModel.getCardMedia();
     portefolio.appendChild(cardDOM);
   });

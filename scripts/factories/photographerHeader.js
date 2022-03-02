@@ -29,12 +29,24 @@ function photographerHeaderFactory(data) {
   }
 
   function getBadgeDOM() {
-    const div = document.createElement('div');
-    div.classList.add('badge');
+    const badge = document.createElement('div');
+    badge.classList.add('badge');
+
+    const likes = document.createElement('div');
+    likes.classList.add('row');
     const span = document.createElement('span');
-    span.textContent = `${price}€/jour`;
-    div.appendChild(span);
-    return div;
+
+    const icon = document.createElement('i');
+    icon.className = 'fa fa-heart';
+
+    const fee = document.createElement('span');
+    fee.textContent = `${price}€/jour`;
+
+    likes.appendChild(span);
+    likes.appendChild(icon);
+    badge.appendChild(likes);
+    badge.appendChild(fee);
+    return badge;
   }
   return {
     name, picture, getHeaderDOM, getBadgeDOM,
