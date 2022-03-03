@@ -86,6 +86,7 @@ async function initialise(id) {
     displayContactModal(onePhotographer);
     // Affiche les cards media du portefolio:
     displayCardMedia(onePortefolio);
+    getTotalLikes(onePortefolio);
   } catch (error) {
     console.error(error);
   }

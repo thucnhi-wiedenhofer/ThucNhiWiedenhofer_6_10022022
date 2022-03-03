@@ -30,11 +30,11 @@ function photographerProfil(data) {
 
   function getBadgeDOM() {
     const badge = document.createElement('div');
-    badge.classList.add('badge');
-
+    badge.className = 'badge';
     const likes = document.createElement('div');
-    likes.classList.add('row');
+    likes.className = 'row';
     const span = document.createElement('span');
+    span.setAttribute('id', 'total_likes');
 
     const icon = document.createElement('i');
     icon.className = 'fa fa-heart';

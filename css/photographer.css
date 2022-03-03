@@ -65,7 +65,7 @@ main .contact_button {
 
 .badge {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border: none;
   border-radius: 5px 5px 0 0;
@@ -77,9 +77,12 @@ main .contact_button {
   right: 260px;
 }
 
+.badge div {
+  margin-top: 0px;
+}
 .badge span{
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--black);
 }
 .badge .fa-heart {
@@ -228,7 +231,7 @@ form textarea {
   align-items: center;
 }
 
-.row span {
+.card-body span {
   font-size: 24px;
   color: var(--primary);   
 }
