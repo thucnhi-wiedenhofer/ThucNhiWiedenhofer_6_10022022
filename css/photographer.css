@@ -48,6 +48,7 @@ header a{
   font-weight: bold;
   color: white;
   padding: 11px;
+  margin-top: 10px;
   width: 170px;
   height: 70px;
   border: none;
@@ -155,7 +156,7 @@ form textarea {
   height: 160px ;
   border: none;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .formData {
@@ -170,11 +171,10 @@ form textarea {
 /* Message error for form validation */
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 14px;
+  font-size: 13px;
   color: var(--primary);
   display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;

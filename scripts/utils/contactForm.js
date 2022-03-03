@@ -15,35 +15,21 @@ function closeModal() {
   main.style.filter = 'none';
 }
 
-/** ******Affichage des champs saisie dans la console après
- * validation du formulaire de contact avec html5***** */
-/* function validContactForm() {
-  const inputFirstname = document.getElementById('firstname');
-  const inputLastname = document.getElementById('lastname');
-  const inputEmail = document.getElementById('email');
-  const inputMessage = document.getElementById('message');
-
-  console.log(inputFirstname.value);
-  console.log(inputLastname.value);
-  console.log(inputEmail.value);
-  console.log(inputMessage.value);
-} */
-
 /** ******Validation du formulaire de contact***** */
 
 // Vérifie si le champs nom a au moins 2 lettres et pas de chiffres
-function validName(text, index) {
-  if (text.length < 2 || !/^[a-zA-Zéèàê][a-zA-Zéèàê' -]+$/.test(text)) {
-    text.parentElement.setAttribute('data-error-visible', 'true');
+function validName(elt, index) {
+  if (elt.value.length < 2 || !/^[a-zA-Zéèàê][a-zA-Zéèàê' -]+$/.test(elt.value)) {
+    elt.parentElement.setAttribute('data-error-visible', 'true');
   } else {
-    text.parentElement.setAttribute('data-error-visible', 'false');
+    elt.parentElement.setAttribute('data-error-visible', 'false');
   }
 }
 
 // vérifie si l'email est valide
 function validEmail(email) {
   if (email.value === '' || !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email,
+    email.value,
   )) {
     email.parentElement.setAttribute('data-error-visible', 'true');
   } else {
@@ -67,7 +53,7 @@ function validContactForm() {
   const inputEmail = document.getElementById('email');
   const inputMessage = document.getElementById('message');
 
-  // si tous les champs n'ont pas d'erreur
+  // Vérification des champs de saisie
   validName(inputFirstname, 0);
   validName(inputLastname, 1);
   validEmail(inputEmail);
@@ -77,12 +63,12 @@ function validContactForm() {
     && inputLastname.parentElement.dataset.errorVisible === 'false'
     && inputEmail.parentElement.dataset.errorVisible === 'false'
     && inputMessage.parentElement.dataset.errorVisible === 'false') {
-    {
-      // si valide, envoie contenu des champs dans la console
-      console.log(inputFirstname.value);
-      console.log(inputLastname.value);
-      console.log(inputEmail.value);
-      console.log(inputMessage.value);
-    }
+    // si valide, envoie contenu des champs dans la console, reinitialise et fermeture de la modale
+    closeModal();
+    console.log(inputFirstname.value);
+    console.log(inputLastname.value);
+    console.log(inputEmail.value);
+    console.log(inputMessage.value);
+    form.reset();
   }
 }

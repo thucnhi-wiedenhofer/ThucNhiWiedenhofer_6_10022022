@@ -10,7 +10,7 @@ function contactForm(data) {
 
     const form = document.createElement('form');
     form.setAttribute('id', 'contact_form');
-    form.setAttribute('onsubmit', 'event.preventDefault(); validContactForm(); closeModal();');
+    form.setAttribute('onsubmit', 'event.preventDefault(); validContactForm();');
 
     const headerForm = document.createElement('div');
     const h2 = document.createElement('h2');
