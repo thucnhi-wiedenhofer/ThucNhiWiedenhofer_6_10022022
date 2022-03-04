@@ -7,7 +7,12 @@ function lightbox(data) {
 
   function getLightboxDOM() {
     const modal = document.createElement('div');
-    modal.className = 'modal';
+    modal.className = 'lightbox-modal';
+
+    const closeIcon = document.createElement('img');
+    closeIcon.className = 'close-lightbox';
+    closeIcon.setAttribute('src', './assets/icons/closeLightbox.svg');
+    closeIcon.setAttribute('onclick', 'closeLightbox()');
 
     const back = document.createElement('div');
     back.className = 'back';
@@ -17,24 +22,18 @@ function lightbox(data) {
 
     const frame = document.createElement('div');
     frame.className = 'frame';
-    const h3 = document.createElement('h3');
-    h3.textContent = title;
 
     const forward = document.createElement('div');
     forward.className = 'forward';
-    const closeIcon = document.createElement('img');
-    closeIcon.setAttribute('src', './assets/icons/close.svg');
-    closeIcon.setAttribute('onclick', 'closeModal()');
     const next = document.createElement('img');
     next.setAttribute('src', './assets/icons/chevron-right-solid.svg');
     next.setAttribute('onclick', 'slide(1)');
 
+    modal.appendChild(closeIcon);
     modal.appendChild(back);
     back.appendChild(previous);
     modal.appendChild(frame);
-    frame.appendChild(h3);
     modal.appendChild(forward);
-    forward.appendChild(closeIcon);
     forward.appendChild(next);
     return modal;
   }
