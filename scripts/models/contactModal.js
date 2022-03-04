@@ -1,10 +1,9 @@
-//  Constructor Pattern  pour construire une modale avec un formulaire de contact
-
+/** ****** Constructor pattern pour construire une modale formulaire de contact********* */
 // eslint-disable-next-line no-unused-vars
 function contactForm(data) {
   const { name } = data;
 
-  function getModalDOM() {
+  function getFormModalDOM() {
     const modal = document.createElement('div');
     modal.classList.add('modal');
 
@@ -99,5 +98,5 @@ function contactForm(data) {
     form.appendChild(submit);
     return modal;
   }
-  return { getModalDOM };
+  return { getFormModalDOM };
 }

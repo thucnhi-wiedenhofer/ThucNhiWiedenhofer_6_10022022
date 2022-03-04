@@ -1,4 +1,4 @@
-/** Fonction qui calcule la somme des likes media quand on clique sur l'icone*********** */
+/** Fonction qui incremente les likes media quand on clique sur l'icone*********** */
 
 // eslint-disable-next-line no-unused-vars
 function like(id) {

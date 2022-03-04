@@ -53,9 +53,9 @@ async function displayPhotographer(onePhotographer) {
 
 async function displayContactModal(onePhotographer) {
   const contactModal = document.querySelector('#contact_modal');
-  const modalModel = contactForm(onePhotographer);
-  const modalDOM = modalModel.getModalDOM();
-  contactModal.appendChild(modalDOM);
+  const formModel = contactForm(onePhotographer);
+  const formDOM = formModel.getFormModalDOM();
+  contactModal.appendChild(formDOM);
 }
 
 async function displayCardMedia(onePortefolio) {
@@ -73,6 +73,20 @@ async function displayCardMedia(onePortefolio) {
   });
 }
 
+async function displayLightboxModal(onePortefolio) {
+  const lightboxModal = document.querySelector('#lightbox_modal');
+  const lightboxModel = lightbox(onePortefolio);
+  const lightboxDOM = lightboxModel.getLightboxDOM();
+  lightboxModal.appendChild(lightboxDOM);
+
+  onePortefolio.forEach((elt) => {
+    const slideModel = slideFactory(elt);
+    const slideDOM = slideModel.getMediaForSlide();
+    const frame = document.querySelector('.frame');
+    frame.appendChild(slideDOM);
+  });
+}
+
 async function initialise(id) {
   try {
     // Récupère les datas du photographe de l'id correspondant
@@ -86,7 +100,10 @@ async function initialise(id) {
     displayContactModal(onePhotographer);
     // Affiche les cards media du portefolio:
     displayCardMedia(onePortefolio);
+    // Affiche total des likes dans badge:
     getTotalLikes(onePortefolio);
+    // Affiche modal lightbox:
+    displayLightboxModal(onePortefolio);
   } catch (error) {
     console.error(error);
   }

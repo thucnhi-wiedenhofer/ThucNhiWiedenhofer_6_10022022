@@ -1,5 +1,5 @@
+/** Constructor pattern pour créer une section de photographe-header ********* */
 /* eslint-disable no-unused-vars */
-// Factory pour créer une section de photographe-header dans la page photographer.js
 
 function photographerProfil(data) {
   const {

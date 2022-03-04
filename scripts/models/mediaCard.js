@@ -1,5 +1,5 @@
-// création card media du portefolio: photo ou video du photographe
-
+//
+/** ******création card media du portefolio: photo ou video du photographe***** */
 // eslint-disable-next-line no-unused-vars
 function cardMedia(data) {
   const {

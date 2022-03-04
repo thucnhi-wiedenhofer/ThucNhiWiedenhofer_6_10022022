@@ -1,4 +1,4 @@
-// Factory pour créer une card
+/** ****** Constructor pattern pour créer une card de photographe********* */
 // eslint-disable-next-line no-unused-vars
 function photographer(data) {
   const {

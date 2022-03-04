@@ -1,21 +1,21 @@
-/** ******Factory pour créer card media du portefolio: photo ou video du photographe***** */
+/** ******Factory pour créer un slide du lightbox: photo ou video ***** */
 // eslint-disable-next-line no-unused-vars
-function mediaFactory(data) {
+function slideFactory(data) {
   const { image, video } = data;
 
-  function getMedia() {
-    const link = document.createElement('a');
-    link.setAttribute('href', '#');
+  function getMediaForSlide() {
+    const slide = document.createElement('div');
+    slide.className = 'slide';
     if (image) {
       const img = document.createElement('img');
       img.setAttribute('src', `assets/images/${image}`);
-      link.appendChild(img);
+      slide.appendChild(img);
     } else if (video) {
       const film = document.createElement('video');
       film.setAttribute('src', `assets/images/${video}`);
-      link.appendChild(film);
+      slide.appendChild(film);
     }
-    return link;
+    return slide;
   }
-  return { getMedia };
+  return { getMediaForSlide };
 }
