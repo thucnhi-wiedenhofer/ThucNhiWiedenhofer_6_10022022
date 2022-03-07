@@ -18,7 +18,7 @@ function lightbox(data) {
     back.className = 'back';
     const previous = document.createElement('img');
     previous.setAttribute('src', './assets/icons/chevron-left-solid.svg');
-    previous.setAttribute('onclick', 'slide(-1)');
+    previous.setAttribute('onclick', 'changeSlide(-1)');
 
     const frame = document.createElement('div');
     frame.className = 'frame';
@@ -27,7 +27,7 @@ function lightbox(data) {
     forward.className = 'forward';
     const next = document.createElement('img');
     next.setAttribute('src', './assets/icons/chevron-right-solid.svg');
-    next.setAttribute('onclick', 'slide(1)');
+    next.setAttribute('onclick', 'changeSlide(1)');
 
     modal.appendChild(closeIcon);
     modal.appendChild(back);

@@ -33,9 +33,12 @@ function getOnePhotographer(photographers, id) {
 }
 
 function getOnePortefolio(photographers, id) {
-  const onePortefolio = photographers.media.filter(
+  // recupere le portefolio du photographe
+  let onePortefolio = photographers.media.filter(
     (item) => item.photographerId === id,
   );
+  onePortefolio = onePortefolio.map((item, index) => ({ index, ...item }));
+  console.log(onePortefolio);
   return onePortefolio;
 }
 
@@ -93,6 +96,7 @@ async function initialise(id) {
     const photographers = await getPhotographers();
     const onePhotographer = getOnePhotographer(photographers, id);
     const onePortefolio = getOnePortefolio(photographers, idPhotographer);
+    // const index = getIndexPortefolio(onePortefolio);
 
     // Affiche photograph-header et badge:
     displayPhotographer(onePhotographer);
