@@ -70,7 +70,7 @@ function contactForm(data) {
 
     const submit = document.createElement('button');
     submit.setAttribute('type', 'submit');
-    submit.classList.add('contact_button');
+    submit.classList.add('contact-button');
     submit.textContent = 'Envoyer';
 
     modal.appendChild(form);

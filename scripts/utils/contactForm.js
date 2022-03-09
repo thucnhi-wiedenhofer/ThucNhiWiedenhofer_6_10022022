@@ -1,4 +1,21 @@
 /* eslint-disable no-unused-vars */
+// bouton contact change de couleur au survol:
+const button = document.getElementById('contact_button');
+button.addEventListener(
+  'mouseover',
+  () => {
+    button.style.backgroundColor = 'var(--tertiary)';
+    button.style.color = 'var(--black)';
+  },
+);
+button.addEventListener(
+  'mouseout',
+  () => {
+    button.style.background = 'var(--primary)';
+    button.style.color = '#ffffff';
+  },
+);
+
 // Ouverture de la modale quand on appuie sur contactez-moi
 const modal = document.getElementById('contact_modal');
 const main = document.getElementById('main');
@@ -7,12 +24,23 @@ function displayModal() {
   modal.style.display = 'block';
   // background flou quand la modale est ouverte:
   main.style.filter = 'blur(3px) grayscale(50%)';
+
+  // rend focus uniquement la modal pour l'assistant technologique:
+  document.querySelector('main').inert = true;
+  document.querySelector('header').inert = true;
+  document.getElementById('lightbox_modal').inert = true;
 }
 
 // fermeture de la modale avec close icon
 function closeModal() {
   modal.style.display = 'none';
   main.style.filter = 'none';
+
+  document.getElementById('contact_button').focus();
+  // enlève la propriété inert pour l'assistant technologique:
+  document.querySelector('main').inert = false;
+  document.querySelector('header').inert = false;
+  document.getElementById('lightbox_modal').inert = false;
 }
 
 /** ******Validation du formulaire de contact***** */

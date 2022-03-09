@@ -40,7 +40,8 @@ header a{
   margin-bottom: 0px;
 }
 
-.contact_button {
+.contact-button,
+.dropdown-button {
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -54,7 +55,7 @@ header a{
   cursor: pointer; 
 }
 
-main .contact_button {
+main .contact-button {
   position: absolute;
   top: 290px;
   right: 45%;
@@ -186,6 +187,76 @@ form textarea {
 }
 .formData[data-error-visible="true"]::after {
   opacity: 1;
+}
+
+/*************section filtres (dropdown)*********** */
+.filter {
+  position: relative;
+  right: 490px;
+  top: 20px;
+}
+
+.filter span {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  margin-top: 10px;
+  width: 170px;
+  border: none;  
+  background-color: var(--primary);
+  border-radius: 5px;
+  list-style: none;
+  cursor: pointer; 
+  display: none;
+  position: absolute;
+  top: 0px; 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu li {
+  padding:10px;
+}
+.dropdown-menu li:not(:last-child) {
+  border-bottom: 1px solid #fff;
+}
+/* Change de couleur au survol */
+.dropdown-menu li:hover {
+  background-color: var(--tertiary);
+  color: var(--black);
+  margin: -11px;
+}
+
+.up-icon::before { 
+    font-family: 'Font Awesome 5 Free';
+    content: '\f106';
+    font-weight: 900;
+    color:#ffffff;
+    margin-left: 18px;
+}
+
+.down-icon::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f107";
+  color: #ffffff;
+  margin-left: 18px;
+}
+.visible {
+  display: block;
 }
 
 /*************section portefolio du photographe*********** */
@@ -329,7 +400,7 @@ form textarea {
   .photograph-header h1{
     font-size: 40px;
   }
-  main .contact_button {
+  main .contact-button {
     top: 390px;
   }
   .badge {
@@ -345,6 +416,10 @@ form textarea {
   }
   .modal label {
     font-size: 20px;
+  }
+  .filter {
+    right: 320px;
+    top: 20px;
   }
   .portefolio {
     width: 900px;
@@ -363,6 +438,7 @@ form textarea {
   .close-lightbox {
     width: 30px;
     right: 100px;
+    cursor: pointer;
   }
 }
 
@@ -384,7 +460,7 @@ form textarea {
     align-items: center;
     order: 1;
   }
-  main .contact_button {
+  main .contact-button {
     top: 610px;
     right: 38%;
   }
@@ -398,6 +474,10 @@ form textarea {
   }
   .modal{
     min-width: 360px;
+  }
+  .filter {
+    left: -110px;
+    top: 20px;
   }
   .portefolio {
     width: 350px;
@@ -420,9 +500,13 @@ form textarea {
 }  
 }
 @media screen and (max-width: 480px) {
-  main .contact_button {
+  main .contact-button {
     top: 620px;
     right: 25%;
+  }
+  .filter {
+    left: 0px;
+    top: 30px;
   }
   .lightbox-modal {
     width: 350px;

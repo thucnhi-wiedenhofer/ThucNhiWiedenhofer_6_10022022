@@ -37,8 +37,8 @@ function getOnePortefolio(photographers, id) {
   let onePortefolio = photographers.media.filter(
     (item) => item.photographerId === id,
   );
+  // créer index de chaque media du portefolio pour utiliser dans mediaFactory:
   onePortefolio = onePortefolio.map((item, index) => ({ index, ...item }));
-  console.log(onePortefolio);
   return onePortefolio;
 }
 
