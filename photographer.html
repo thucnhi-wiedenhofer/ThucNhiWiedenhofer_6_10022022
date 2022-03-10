@@ -29,7 +29,7 @@
     <section class="filter">
       <span>Trier par</span>
       <div class="dropdown" id="dropdown">
-        <button class="dropdown-button" onclick="dropdownToggle()">Popularité
+        <button class="dropdown-button" onclick="openDropdown()">Popularité
           <span class="down-icon"></span>
         </button>
         <ul id="dropdown_menu" class="dropdown-menu">
@@ -46,6 +46,9 @@
   </div>
   <div id="lightbox_modal"></div>
 
+  <!-- Accessibilité des modales -->
+  <script src="node_modules/dialog-polyfill/dist/dialog-polyfill.js"></script>
+  <script src="node_modules/wicg-inert/dist/inert.js"></script>
   <!-- Models -->
   <script src="./scripts/models/photographerHeader.js"></script>
   <script src="./scripts/models/contactModal.js"></script>

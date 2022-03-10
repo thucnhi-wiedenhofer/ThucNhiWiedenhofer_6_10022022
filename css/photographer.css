@@ -237,7 +237,6 @@ form textarea {
 .dropdown-menu li:hover {
   background-color: var(--tertiary);
   color: var(--black);
-  margin: -11px;
 }
 
 .up-icon::before { 
