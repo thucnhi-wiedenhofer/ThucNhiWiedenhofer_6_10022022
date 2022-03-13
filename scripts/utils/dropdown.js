@@ -1,20 +1,87 @@
 /** ****fonctionnements du dropdown et filtres*********** */
 
-const dropdownMenu = document.getElementById('dropdown_menu');
-const menu = document.getElementsByClassName('dropdown-menu');
+function Dropdown(dropdown) {
+  const [button, menu] = dropdown.children;
 
-// ouverture du dropdown au click du bouton popularité:
-function openDropdown() {
-  dropdownMenu.style.display = 'block';
-}
-
-// ferme le dropdown menu au click exterieur ou à l'interieur du menu
-window.onclick = (event) => {
-  if (!event.target.matches('.dropdown-button')) {
-    let i;
-    for (i = 0; i < menu.length; i += 1) {
-      const openMenu = menu[i];
-      openMenu.style.display = 'none';
+  // eslint-disable-next-line consistent-return
+  const handleClickOut = (e) => {
+    if (!dropdown) {
+      return document.removeEventListener('click', handleClickOut);
     }
-  }
-};
+    if (!dropdown.contains(e.target)) {
+      this.toggle(false);
+    }
+  };
+
+  const setValue = (elt) => {
+    const val = elt.textContent;
+    button.textContent = val;
+    this.value = val;
+    this.toggle(false);
+    dropdown.dispatchEvent(new Event('change'));
+  };
+
+  const handleKeyDown = (e) => {
+    e.preventDefault();
+    // si flèche du haut:
+    if (e.KeyCode === 38 && e.target.previousElementSibling) {
+      e.target.previousElementSibling.focus();
+      // si flèche du bas:
+    } else if (e.KeyCode === 40 && e.target.nextElementSibling) {
+      e.target.nextElementSibling.focus();
+      // si echape:
+    } else if (e.KeyCode === 27) {
+      this.toggle(false);
+      // si entrée ou espace:
+    } else if (e.KeyCode === 13 || e.KeyCode === 32) {
+      setValue(e.target);
+    }
+  };
+
+  const handleToggleKeyPress = (e) => {
+    e.preventDefault();
+
+    // si echape:
+    if (e.keyCode === 27) {
+      this.toggle(false);
+      // si entrée ou espace:
+    } else if (e.keyCode === 13 || e.keyCode === 32) {
+      this.toggle(true);
+      // si tab:
+    } else if (e.keyCode === 9) {
+      this.toggle(false);
+    }
+  };
+
+  button.addEventListener('keydown', handleToggleKeyPress);
+  button.addEventListener('click', () => this.toggle());
+  [...menu.children].forEach((item) => {
+    item.addEventListener('keydown', handleKeyDown);
+    item.addEventListener('click', () => setValue(item));
+  });
+
+  this.element = dropdown;
+  this.value = button.textContent;
+  this.toggle = (expand = null) => {
+    // eslint-disable-next-line no-param-reassign
+    expand = expand === null ? menu.getAttribute('aria-expanded') !== 'true' : expand;
+
+    menu.setAttribute('aria-expanded', expand);
+
+    if (expand) {
+      button.classList.remove('active');
+      document.addEventListener('click', handleClickOut);
+      dropdown.dispatchEvent(new Event('opened'));
+    } else {
+      button.classList.add('active');
+      dropdown.dispatchEvent(new Event('closed'));
+      document.removeEventListener('click', handleClickOut);
+    }
+  };
+}
+const dropdown = new Dropdown(document.getElementById('dropdown'));
+
+dropdown.element.addEventListener('change', () => {
+  // eslint-disable-next-line no-undef
+  select(dropdown.value);
+});

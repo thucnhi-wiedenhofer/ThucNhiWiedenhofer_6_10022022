@@ -220,11 +220,15 @@ form textarea {
   border-radius: 5px;
   list-style: none;
   cursor: pointer; 
-  display: none;
+  visibility: hidden;
   position: absolute;
   top: 0px; 
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+}
+
+.dropdown-menu[aria-expanded='true'] {
+  visibility: visible;
 }
 
 .dropdown-menu li {
@@ -232,11 +236,6 @@ form textarea {
 }
 .dropdown-menu li:not(:last-child) {
   border-bottom: 1px solid #fff;
-}
-/* Change de couleur au survol */
-.dropdown-menu li:hover {
-  background-color: var(--tertiary);
-  color: var(--black);
 }
 
 .up-icon::before { 
@@ -247,16 +246,15 @@ form textarea {
     margin-left: 18px;
 }
 
-.down-icon::before {
+.active::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f107";
   color: #ffffff;
-  margin-left: 18px;
+  position:absolute;
+  right: 20px;
 }
-.visible {
-  display: block;
-}
+
 
 /*************section portefolio du photographe*********** */
 .portefolio {
