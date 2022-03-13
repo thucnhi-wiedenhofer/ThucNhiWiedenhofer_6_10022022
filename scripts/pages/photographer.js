@@ -37,9 +37,10 @@ function getOnePortefolio(photographers, id) {
   let onePortefolio = photographers.media.filter(
     (item) => item.photographerId === id,
   );
+  // Affiche les cards par popularité:
+  onePortefolio.sort((a, b) => b.likes - a.likes);
   // créer index de chaque media du portefolio pour utiliser dans mediaFactory:
   onePortefolio = onePortefolio.map((item, index) => ({ index, ...item }));
-  onePortefolio.sort((a, b) => b.likes - a.likes);
   return onePortefolio;
 }
 
@@ -119,83 +120,25 @@ async function initialise(id) {
 
 initialise(idPhotographer);
 
-// fonction menu filtre
-
-function sortPopular(a, b) {
-  if (a.likes > b.likes) {
-    return -1;
-  }
-  if (a.likes < b.likes) {
-    return 1;
-  }
-  return 0;
-}
-
-function sortRecent(a, b) {
-  if (a.date > b.date) {
-    return -1;
-  }
-  if (a.date < b.date) {
-    return 1;
-  }
-  return 0;
-}
-
-function sortTitle(a, b) {
-  if (a.title > b.title) {
-    return 1;
-  }
-  if (a.title < b.title) {
-    return -1;
-  }
-  return 0;
-}
-
-// Gestion des filtres selon option choisie.
-// eslint-disable-next-line consistent-return
-function sortFilter(value, portefolio) {
-  /*  if (value === 'Popularité') {
-      portefolio.sort((a, b) => a.likes - b.likes);
-    }
-  
-    if (value === 'Date') {
-      portefolio.sort((a, b) => a.date - b.date);
-    }
-  
-    if (value === 'Titre') {
-      portefolio.sort((a, b) => a.title - b.title);
-    }
-  
-    return portefolio;
-  } */
-  if (value === 'Popularité') {
-    const filter = portefolio.sort(sortPopular);
-    return filter;
-  }
-  if (value === 'Date') {
-    const filter = portefolio.sort(sortRecent);
-    return filter;
-  }
-
-  if (value === 'Titre') {
-    const filter = portefolio.sort(sortTitle);
-    return filter;
-  }
-
-  const filter = portefolio;
-  return filter;
-}
-// Application des filtres.
-
+// Gestion des filtres selon valeur choisie du dropdown.
 // eslint-disable-next-line no-unused-vars
 async function select(value) {
   const photographers = await getPhotographers();
   const onePortefolio = getOnePortefolio(photographers, idPhotographer);
 
-  const filter = sortFilter(value, onePortefolio);
-  console.log(value);
-  console.log(onePortefolio);
+  if (value === 'Popularité') {
+    onePortefolio.sort((a, b) => b.likes - a.likes);
+  }
+
+  if (value === 'Date') {
+    onePortefolio.sort((a, b) => new Date(a.date) - new Date(b.date));
+  }
+
+  if (value === 'Titre') {
+    onePortefolio.sort((a, b) => ((a.title > b.title) ? 1 : -1));
+  }
 
   document.querySelector('.portefolio').innerHTML = '';
-  displayCardMedia(filter);
+  displayCardMedia(onePortefolio);
+  displayLightboxModal(onePortefolio);
 }
