@@ -25,16 +25,16 @@ function Dropdown(dropdown) {
   const handleKeyDown = (e) => {
     e.preventDefault();
     // si flèche du haut:
-    if (e.KeyCode === 38 && e.target.previousElementSibling) {
+    if (e.keyCode === 38 && e.target.previousElementSibling) {
       e.target.previousElementSibling.focus();
       // si flèche du bas:
-    } else if (e.KeyCode === 40 && e.target.nextElementSibling) {
+    } else if (e.keyCode === 40 && e.target.nextElementSibling) {
       e.target.nextElementSibling.focus();
       // si echape:
-    } else if (e.KeyCode === 27) {
+    } else if (e.keyCode === 27) {
       this.toggle(false);
       // si entrée ou espace:
-    } else if (e.KeyCode === 13 || e.KeyCode === 32) {
+    } else if (e.keyCode === 13 || e.keyCode === 32) {
       setValue(e.target);
     }
   };

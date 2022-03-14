@@ -10,6 +10,7 @@ function mediaFactory(data) {
     link.setAttribute('onclick', `openLightbox(${index});`);
     // ouverture de la lightbox avec la touche entrée:
     link.setAttribute('onkeydown', `keyOpenLightbox(${index});`);
+    link.setAttribute('tabindex', '0');
     if (image) {
       const img = document.createElement('img');
       img.setAttribute('src', `assets/images/${image}`);

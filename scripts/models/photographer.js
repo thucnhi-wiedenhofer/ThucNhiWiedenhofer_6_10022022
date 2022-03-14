@@ -17,7 +17,6 @@ function photographer(data) {
     link.setAttribute('role', 'link');
     link.setAttribute('href', `photographer.html?id=${id}`);
     link.setAttribute('aria-label', `visiter la page de ${name}`);
-    link.setAttribute('target', '_blank');
 
     const h4 = document.createElement('h4');
     h4.textContent = `${city}, ${country}`;
