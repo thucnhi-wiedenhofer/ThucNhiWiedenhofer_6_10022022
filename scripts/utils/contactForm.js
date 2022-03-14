@@ -20,10 +20,20 @@ button.addEventListener(
 const modal = document.getElementById('contact_modal');
 const main = document.getElementById('main');
 
+// fermeture par touche echap:
+function keyCloseModal(e) {
+  if (e.key === 'Escape') {
+    // eslint-disable-next-line no-use-before-define
+    closeModal();
+  }
+}
+
 function displayModal() {
   modal.style.display = 'block';
   // background flou quand la modale est ouverte:
   main.style.filter = 'blur(3px) grayscale(50%)';
+
+  document.addEventListener('keyup', keyCloseModal);
 
   // rend focus uniquement la modal pour l'assistant technologique:
   document.querySelector('main').inert = true;
@@ -36,6 +46,7 @@ function closeModal() {
   modal.style.display = 'none';
   main.style.filter = 'none';
 
+  document.removeEventListener('keyup', keyCloseModal, false);
   document.getElementById('contact_button').focus();
   // enlève la propriété inert pour l'assistant technologique:
   document.querySelector('main').inert = false;

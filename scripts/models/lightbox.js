@@ -1,10 +1,6 @@
 /** constructor pattern pour créer une lightbox*********** */
 // eslint-disable-next-line no-unused-vars
-function lightbox(data) {
-  const {
-    title,
-  } = data;
-
+function lightbox() {
   function getLightboxDOM() {
     const modal = document.createElement('div');
     modal.className = 'lightbox-modal';

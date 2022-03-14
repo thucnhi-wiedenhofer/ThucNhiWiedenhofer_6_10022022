@@ -26,6 +26,7 @@ function cardMedia(data) {
     const icon = document.createElement('i');
     icon.className = 'fa fa-heart';
     icon.setAttribute('onclick', `like(${id})`);
+    icon.setAttribute('onkeypress', `like(${id})`);
 
     card.appendChild(cardHeader);
     card.appendChild(cardBody);

@@ -13,6 +13,8 @@ function slideFactory(data) {
     } else if (video) {
       const film = document.createElement('video');
       film.setAttribute('src', `assets/images/${video}`);
+      film.setAttribute('autoplay', 'true');
+      film.setAttribute('loop', 'true');
       slide.appendChild(film);
     }
     const h3 = document.createElement('h3');

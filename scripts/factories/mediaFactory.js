@@ -8,6 +8,8 @@ function mediaFactory(data) {
     link.setAttribute('href', '#');
     // ouverture de la lightbox au click de l'image:
     link.setAttribute('onclick', `openLightbox(${index});`);
+    // ouverture de la lightbox avec la touche entrée:
+    link.setAttribute('onkeydown', `keyOpenLightbox(${index});`);
     if (image) {
       const img = document.createElement('img');
       img.setAttribute('src', `assets/images/${image}`);

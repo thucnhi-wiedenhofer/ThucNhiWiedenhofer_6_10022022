@@ -38,6 +38,7 @@ header a{
 .photograph-header h1{
   font-size: 64px;
   margin-bottom: 0px;
+  color:var(--secondary);
 }
 
 .contact-button,
@@ -246,7 +247,7 @@ form textarea {
     margin-left: 18px;
 }
 
-.active::before {
+.down-icon::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f107";

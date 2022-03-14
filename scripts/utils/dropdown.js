@@ -13,12 +13,13 @@ function Dropdown(dropdown) {
     }
   };
 
-  const setValue = (elt) => {
-    const val = elt.textContent;
+  const setValue = (item) => {
+    const val = item.textContent;
     button.textContent = val;
     this.value = val;
     this.toggle(false);
     dropdown.dispatchEvent(new Event('change'));
+    button.focus();
   };
 
   const handleKeyDown = (e) => {
@@ -69,11 +70,12 @@ function Dropdown(dropdown) {
     menu.setAttribute('aria-expanded', expand);
 
     if (expand) {
-      button.classList.remove('active');
+      button.classList.add('active');
+      menu.children[0].focus();
       document.addEventListener('click', handleClickOut);
       dropdown.dispatchEvent(new Event('opened'));
     } else {
-      button.classList.add('active');
+      button.classList.remove('active');
       dropdown.dispatchEvent(new Event('closed'));
       document.removeEventListener('click', handleClickOut);
     }

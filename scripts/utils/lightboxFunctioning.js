@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable indent */
 /* eslint-disable no-unused-vars */
 /** ****Ouverture de la lightbox au click de la card media portefolio*********** */
 
@@ -26,15 +28,21 @@ function showSlide(n) {
 
   slides[slideIndex].style.display = 'block';
   lightboxModal.style.display = 'block';
+  // navigation par touche:
+  document.addEventListener('keydown', keyLightbox);
 }
 
 // au click des chevrons avant/après des lightbox:
 function changeSlide(n) {
   showSlide(slideIndex += n);
 }
+
 // fermeture de la modale lightbox avec close icon
 function closeLightbox() {
+  // fermeture au click sur close icon:
   lightboxModal.style.display = 'none';
+  // fermeture par touche echap:
+  document.removeEventListener('keydown', keyLightbox, false);
   // enleve la propriété inert pour l'assistant technologique:
   document.querySelector('main').inert = false;
   document.querySelector('header').inert = false;
@@ -44,4 +52,26 @@ function closeLightbox() {
 // avec index du media = slideIndex:
 function openLightbox(n) {
   showSlide(slideIndex = n);
+}
+
+function keyOpenLightbox(e, index) {
+  if (e.keyCode === 13) {
+    openLightbox(index);
+  }
+}
+
+function keyLightbox(e) {
+  switch (e.keyCode) {
+    case 37:
+      changeSlide(-1);
+      break;
+    case 39:
+      changeSlide(1);
+      break;
+    case 27:
+      closeLightbox();
+      break;
+    default:
+    // do nothing
+  }
 }
