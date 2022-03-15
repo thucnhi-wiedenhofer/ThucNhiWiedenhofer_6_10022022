@@ -38,7 +38,7 @@ function contactForm(data) {
     firstnameInput.setAttribute('type', 'text');
     firstnameInput.setAttribute('name', 'firstname');
     firstnameInput.setAttribute('id', 'firstname');
-    firstnameInput.setAttribute('aria-label', 'prénom');
+    firstnameInput.setAttribute('placeholder', 'prénom');
 
     const lastData = document.createElement('div');
     lastData.classList.add('formData');
@@ -51,7 +51,7 @@ function contactForm(data) {
     lastnameInput.setAttribute('type', 'text');
     lastnameInput.setAttribute('name', 'lastname');
     lastnameInput.setAttribute('id', 'lastname');
-    lastnameInput.setAttribute('aria-label', 'nom');
+    lastnameInput.setAttribute('placeholder', 'nom');
 
     const emailData = document.createElement('div');
     emailData.classList.add('formData');

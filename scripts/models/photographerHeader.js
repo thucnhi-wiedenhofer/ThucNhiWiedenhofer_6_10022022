@@ -45,7 +45,7 @@ function photographerProfil(data) {
     const span = document.createElement('span');
     span.setAttribute('id', 'total_likes');
 
-    const icon = document.createElement('i');
+    const icon = document.createElement('span');
     icon.className = 'fa fa-heart';
 
     const fee = document.createElement('span');

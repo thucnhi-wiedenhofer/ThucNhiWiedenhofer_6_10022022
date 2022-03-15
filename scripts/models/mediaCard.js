@@ -23,7 +23,7 @@ function cardMedia(data) {
     const span = document.createElement('span');
     span.setAttribute('id', `${id}`);
     span.textContent = likes;
-    const icon = document.createElement('i');
+    const icon = document.createElement('span');
     icon.className = 'fa fa-heart';
     icon.setAttribute('role', 'img');
     icon.setAttribute('tabindex', '0');
