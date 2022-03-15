@@ -10,6 +10,9 @@ function photographerProfil(data) {
 
   function getHeaderDOM() {
     const article = document.createElement('article');
+    article.setAttribute('role', 'article');
+    article.setAttribute('aria-label', `Fiche du photographe ${name}`);
+
     const div = document.createElement('div');
     const h1 = document.createElement('h1');
     h1.textContent = name;

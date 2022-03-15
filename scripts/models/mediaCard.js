@@ -25,8 +25,11 @@ function cardMedia(data) {
     span.textContent = likes;
     const icon = document.createElement('i');
     icon.className = 'fa fa-heart';
+    icon.setAttribute('role', 'img');
+    icon.setAttribute('tabindex', '0');
     icon.setAttribute('onclick', `like(${id})`);
     icon.setAttribute('onkeypress', `like(${id})`);
+    icon.setAttribute('aria-label', 'clicker ou touche entrée pour ajouter un like');
 
     card.appendChild(cardHeader);
     card.appendChild(cardBody);

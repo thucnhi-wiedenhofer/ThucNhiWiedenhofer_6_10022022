@@ -3,8 +3,8 @@
 function Dropdown(dropdown) {
   const [button, menu] = dropdown.children;
 
-  // eslint-disable-next-line consistent-return
   // ferme le dropdown en clickant en dehors :
+  // eslint-disable-next-line consistent-return
   const handleClickOut = (e) => {
     if (!dropdown) {
       return document.removeEventListener('click', handleClickOut);
@@ -71,12 +71,12 @@ function Dropdown(dropdown) {
     menu.setAttribute('aria-expanded', expand);
 
     if (expand) {
-      button.classList.remove('active');
+      button.classList.add('active');
       menu.children[0].focus();
       document.addEventListener('click', handleClickOut);
       dropdown.dispatchEvent(new Event('opened'));
     } else {
-      button.classList.add('active');
+      button.classList.remove('active');
       dropdown.dispatchEvent(new Event('closed'));
       document.removeEventListener('click', handleClickOut);
     }

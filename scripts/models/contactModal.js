@@ -14,6 +14,8 @@ function contactForm(data) {
     const headerForm = document.createElement('div');
     const h2 = document.createElement('h2');
     h2.textContent = 'Contactez-moi';
+    h2.setAttribute('aria-label', `formulaire pour contacter ${name}`);
+
     const closeIcon = document.createElement('img');
     closeIcon.setAttribute('src', './assets/icons/close.svg');
     closeIcon.setAttribute('onclick', 'closeModal()');
@@ -49,7 +51,7 @@ function contactForm(data) {
     lastnameInput.setAttribute('type', 'text');
     lastnameInput.setAttribute('name', 'lastname');
     lastnameInput.setAttribute('id', 'lastname');
-    firstnameInput.setAttribute('aria-label', 'nom');
+    lastnameInput.setAttribute('aria-label', 'nom');
 
     const emailData = document.createElement('div');
     emailData.classList.add('formData');
