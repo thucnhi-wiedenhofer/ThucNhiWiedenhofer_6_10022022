@@ -17,6 +17,10 @@ function contactForm(data) {
     const closeIcon = document.createElement('img');
     closeIcon.setAttribute('src', './assets/icons/close.svg');
     closeIcon.setAttribute('onclick', 'closeModal()');
+    closeIcon.setAttribute(
+      'aria-label',
+      'fermer le formulaire de contact avec la touche echap',
+    );
 
     const span = document.createElement('span');
     span.textContent = name;
@@ -32,6 +36,7 @@ function contactForm(data) {
     firstnameInput.setAttribute('type', 'text');
     firstnameInput.setAttribute('name', 'firstname');
     firstnameInput.setAttribute('id', 'firstname');
+    firstnameInput.setAttribute('aria-label', 'prénom');
 
     const lastData = document.createElement('div');
     lastData.classList.add('formData');
@@ -44,6 +49,7 @@ function contactForm(data) {
     lastnameInput.setAttribute('type', 'text');
     lastnameInput.setAttribute('name', 'lastname');
     lastnameInput.setAttribute('id', 'lastname');
+    firstnameInput.setAttribute('aria-label', 'nom');
 
     const emailData = document.createElement('div');
     emailData.classList.add('formData');

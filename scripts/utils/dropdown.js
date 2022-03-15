@@ -4,6 +4,7 @@ function Dropdown(dropdown) {
   const [button, menu] = dropdown.children;
 
   // eslint-disable-next-line consistent-return
+  // ferme le dropdown en clickant en dehors :
   const handleClickOut = (e) => {
     if (!dropdown) {
       return document.removeEventListener('click', handleClickOut);
@@ -21,7 +22,7 @@ function Dropdown(dropdown) {
     dropdown.dispatchEvent(new Event('change'));
     button.focus();
   };
-
+  // Navigation clavier
   const handleKeyDown = (e) => {
     e.preventDefault();
     // si flèche du haut:
@@ -30,10 +31,10 @@ function Dropdown(dropdown) {
       // si flèche du bas:
     } else if (e.keyCode === 40 && e.target.nextElementSibling) {
       e.target.nextElementSibling.focus();
-      // si echape:
+      //  echape pour sortir :
     } else if (e.keyCode === 27) {
       this.toggle(false);
-      // si entrée ou espace:
+      // si entrée ou espace, valide la selection:
     } else if (e.keyCode === 13 || e.keyCode === 32) {
       setValue(e.target);
     }
@@ -42,13 +43,13 @@ function Dropdown(dropdown) {
   const handleToggleKeyPress = (e) => {
     e.preventDefault();
 
-    // si echape:
+    // echape pour sortir:
     if (e.keyCode === 27) {
       this.toggle(false);
-      // si entrée ou espace:
+      // // si entrée ou espace, ouvre dropdown:
     } else if (e.keyCode === 13 || e.keyCode === 32) {
       this.toggle(true);
-      // si tab:
+      // va sur dropdown avec tab:
     } else if (e.keyCode === 9) {
       this.toggle(false);
     }
@@ -70,12 +71,12 @@ function Dropdown(dropdown) {
     menu.setAttribute('aria-expanded', expand);
 
     if (expand) {
-      button.classList.add('active');
+      button.classList.remove('active');
       menu.children[0].focus();
       document.addEventListener('click', handleClickOut);
       dropdown.dispatchEvent(new Event('opened'));
     } else {
-      button.classList.remove('active');
+      button.classList.add('active');
       dropdown.dispatchEvent(new Event('closed'));
       document.removeEventListener('click', handleClickOut);
     }

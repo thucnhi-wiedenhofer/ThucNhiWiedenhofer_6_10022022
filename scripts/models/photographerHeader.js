@@ -13,12 +13,16 @@ function photographerProfil(data) {
     const div = document.createElement('div');
     const h1 = document.createElement('h1');
     h1.textContent = name;
+    h1.setAttribute('role', 'heading');
+    h1.setAttribute('aria-label', `photographe ${name}`);
+
     const h3 = document.createElement('h3');
     h3.textContent = `${city}, ${country}`;
     const p = document.createElement('p');
     p.textContent = tagline;
     const img = document.createElement('img');
     img.setAttribute('src', picture);
+    img.setAttribute('alt', `portrait de ${name}`);
 
     div.appendChild(h1);
     div.appendChild(h3);
@@ -31,6 +35,8 @@ function photographerProfil(data) {
   function getBadgeDOM() {
     const badge = document.createElement('div');
     badge.className = 'badge';
+    badge.setAttribute('aria-label', `tarif ${price}€ / jour`);
+
     const likes = document.createElement('div');
     likes.className = 'row';
     const span = document.createElement('span');
