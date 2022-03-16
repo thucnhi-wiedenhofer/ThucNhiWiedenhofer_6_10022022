@@ -9,10 +9,12 @@ function slideFactory(data) {
     if (image) {
       const img = document.createElement('img');
       img.setAttribute('src', `assets/images/${image}`);
+      img.setAttribute('alt', `${title}`);
       slide.appendChild(img);
     } else if (video) {
       const film = document.createElement('video');
       film.setAttribute('src', `assets/images/${video}`);
+      film.setAttribute('alt', `${title}`);
       film.setAttribute('autoplay', 'true');
       film.setAttribute('loop', 'true');
       slide.appendChild(film);

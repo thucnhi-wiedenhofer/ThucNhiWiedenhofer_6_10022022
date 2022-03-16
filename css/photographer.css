@@ -15,9 +15,8 @@ header a{
   flex-direction: row;
   justify-content: space-between;
   background-color: var(--beige);
-  min-height: 313px;
+  min-height: 280px;
   width: 1240px;
-  margin: 30px auto;
   padding: 15px 30px 40px 50px;
   color: var(--grey);
   border-radius: 5px;
@@ -58,7 +57,7 @@ header a{
 
 main .contact-button {
   position: absolute;
-  top: 290px;
+  top: 250px;
   right: 45%;
 }
 
@@ -434,7 +433,7 @@ form textarea {
     font-size: 40px;
   }
   main .contact-button {
-    top: 390px;
+    top: 350px;
   }
   .badge {
     right: 30px;
@@ -485,7 +484,7 @@ form textarea {
     margin-bottom: 50px;
   }
   main .contact-button {
-    top: 610px;
+    top: 570px;
     right: 38%;
   }
   .row {
@@ -529,7 +528,6 @@ form textarea {
 }
 @media screen and (max-width: 480px) {
   main .contact-button {
-    top: 620px;
     right: 25%;
   }
   .modal {

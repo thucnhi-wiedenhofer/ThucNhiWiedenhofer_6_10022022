@@ -33,12 +33,11 @@ function contactForm(data) {
     firstData.setAttribute('data-error-visible', 'false');
     const firstnameLabel = document.createElement('label');
     firstnameLabel.textContent = 'Prénom';
-    firstnameLabel.setAttribute('for', 'prenom');
+    firstnameLabel.setAttribute('for', 'firstname');
     const firstnameInput = document.createElement('input');
     firstnameInput.setAttribute('type', 'text');
     firstnameInput.setAttribute('name', 'firstname');
     firstnameInput.setAttribute('id', 'firstname');
-    firstnameInput.setAttribute('placeholder', 'prénom');
 
     const lastData = document.createElement('div');
     lastData.classList.add('formData');
@@ -46,12 +45,11 @@ function contactForm(data) {
     lastData.setAttribute('data-error-visible', 'false');
     const lastnameLabel = document.createElement('label');
     lastnameLabel.textContent = 'Nom';
-    lastnameLabel.setAttribute('for', 'nom');
+    lastnameLabel.setAttribute('for', 'lastname');
     const lastnameInput = document.createElement('input');
     lastnameInput.setAttribute('type', 'text');
     lastnameInput.setAttribute('name', 'lastname');
     lastnameInput.setAttribute('id', 'lastname');
-    lastnameInput.setAttribute('placeholder', 'nom');
 
     const emailData = document.createElement('div');
     emailData.classList.add('formData');
