@@ -9,6 +9,7 @@ function cardMedia(data) {
   function getCardMedia() {
     const card = document.createElement('div');
     card.className = 'card';
+    card.setAttribute('role', 'image link   ');
 
     const cardHeader = document.createElement('div');
     cardHeader.className = 'card-header';
