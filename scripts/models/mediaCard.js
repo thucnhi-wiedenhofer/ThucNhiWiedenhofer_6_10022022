@@ -9,7 +9,11 @@ function cardMedia(data) {
   function getCardMedia() {
     const card = document.createElement('div');
     card.className = 'card';
-    card.setAttribute('role', 'image link   ');
+    card.setAttribute('role', 'image link');
+    card.setAttribute(
+      'aria-label',
+      `image ${title} avec ${likes} likes`,
+    );
 
     const cardHeader = document.createElement('div');
     cardHeader.className = 'card-header';
