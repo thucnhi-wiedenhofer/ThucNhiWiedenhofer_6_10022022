@@ -15,6 +15,7 @@ function slideFactory(data) {
       const film = document.createElement('video');
       film.setAttribute('src', `assets/images/${video}`);
       film.setAttribute('alt', `${title}`);
+      film.setAttribute('controls', 'true');
       film.setAttribute('autoplay', 'true');
       film.setAttribute('loop', 'true');
       slide.appendChild(film);

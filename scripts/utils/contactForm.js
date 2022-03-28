@@ -57,7 +57,7 @@ function closeModal() {
 /** ******Validation du formulaire de contact***** */
 
 // Vérifie si le champs nom a au moins 2 lettres et pas de chiffres
-function validName(elt, index) {
+function validName(elt) {
   if (elt.value.length < 2 || !/^[a-zA-Zéèàê][a-zA-Zéèàê' -]+$/.test(elt.value)) {
     elt.parentElement.setAttribute('data-error-visible', 'true');
   } else {
@@ -87,27 +87,28 @@ function validMessage(text) {
 
 function validContactForm() {
   const form = document.getElementById('contact_form');
-  const inputFirstname = document.getElementById('firstname');
-  const inputLastname = document.getElementById('lastname');
-  const inputEmail = document.getElementById('email');
-  const inputMessage = document.getElementById('message');
+  const input = document.querySelectorAll('input');
+  const inputFirstname = input[0];
+  const inputLastname = input[1];
+  const inputEmail = input[2];
+  const textarea = document.querySelector('textarea');
 
   // Vérification des champs de saisie
-  validName(inputFirstname, 0);
-  validName(inputLastname, 1);
+  validName(inputFirstname);
+  validName(inputLastname);
   validEmail(inputEmail);
-  validMessage(inputMessage);
+  validMessage(textarea);
 
   if (inputFirstname.parentElement.dataset.errorVisible === 'false'
     && inputLastname.parentElement.dataset.errorVisible === 'false'
     && inputEmail.parentElement.dataset.errorVisible === 'false'
-    && inputMessage.parentElement.dataset.errorVisible === 'false') {
+    && textarea.parentElement.dataset.errorVisible === 'false') {
     // si valide, envoie contenu des champs dans la console, reinitialise et fermeture de la modale
     closeModal();
     console.log(inputFirstname.value);
     console.log(inputLastname.value);
     console.log(inputEmail.value);
-    console.log(inputMessage.value);
+    console.log(textarea.value);
     form.reset();
   }
 }
