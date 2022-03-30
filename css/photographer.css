@@ -5,7 +5,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-header a{
+header a {
   margin-top: 15px;
   margin-bottom: 0px;
 }
@@ -34,10 +34,10 @@ header a{
   margin-top: 40px !important;
 }
 
-.photograph-header h1{
+.photograph-header h1 {
   font-size: 64px;
   margin-bottom: 0px;
-  color:var(--secondary);
+  color: var(--secondary);
 }
 
 .contact-button,
@@ -52,7 +52,7 @@ header a{
   border: none;
   background-color: var(--primary);
   border-radius: 5px;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 main .contact-button {
@@ -67,7 +67,7 @@ main .contact-button {
   align-items: center;
   border: none;
   border-radius: 5px 5px 0 0;
-  background-color: var(--tertiary);  
+  background-color: var(--tertiary);
   width: 376px;
   height: 70px;
   position: fixed;
@@ -78,7 +78,7 @@ main .contact-button {
 .badge div {
   margin-top: 0px;
 }
-.badge span{
+.badge span {
   font-size: 24px;
   font-weight: 600;
   color: var(--black);
@@ -96,14 +96,14 @@ main .contact-button {
   border-radius: 5px;
   background-color: var(--tertiary);
   box-shadow: 0px 2px 10px #000;
-  max-width: 669px ;
+  max-width: 669px;
   width: 54%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 35px;
-  margin: auto; 
+  margin: auto;
   /*Pour centrer la modale*/
   position: fixed;
   top: 50%;
@@ -154,12 +154,12 @@ form input {
   border: none;
   border-radius: 5px;
   padding: 8px;
-  margin-bottom: 5px;  
+  margin-bottom: 5px;
 }
 
 form textarea {
   width: 100%;
-  height: 110px ;
+  height: 110px;
   border: none;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -215,35 +215,35 @@ form textarea {
   padding: 11px;
   margin-top: 10px;
   width: 170px;
-  border: none;  
+  border: none;
   background-color: var(--primary);
   border-radius: 5px;
   list-style: none;
-  cursor: pointer; 
+  cursor: pointer;
   visibility: hidden;
   position: absolute;
-  top: 0px; 
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  top: 0px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
-.dropdown-menu[aria-expanded='true'] {
+.dropdown-menu[aria-expanded="true"] {
   visibility: visible;
 }
 
 .dropdown-menu li {
-  padding:10px;
+  padding: 10px;
 }
 .dropdown-menu li:not(:last-child) {
   border-bottom: 1px solid #fff;
 }
 
-.up-icon::before { 
-    font-family: 'Font Awesome 5 Free';
-    content: '\f106';
-    font-weight: 900;
-    color:#ffffff;
-    margin-left: 18px;
+.up-icon::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f106";
+  font-weight: 900;
+  color: #ffffff;
+  margin-left: 18px;
 }
 
 .down-icon::before {
@@ -251,10 +251,9 @@ form textarea {
   font-weight: 900;
   content: "\f107";
   color: #ffffff;
-  position:absolute;
+  position: absolute;
   right: 20px;
 }
-
 
 /*************section portefolio du photographe*********** */
 .portefolio {
@@ -265,7 +264,6 @@ form textarea {
   flex-wrap: wrap;
   width: 1240px;
   margin-top: 70px;
-
 }
 .card {
   width: 350px;
@@ -294,19 +292,19 @@ form textarea {
   text-overflow: ellipsis;
 }
 .row {
-  width: 45px; 
-  display: flex; 
+  width: 45px;
+  display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .card-body span {
   font-size: 24px;
-  color: var(--primary);   
+  color: var(--primary);
 }
 
 .fa-heart {
-  font-size: 24px!important; 
+  font-size: 24px !important;
   cursor: pointer;
   color: var(--primary);
   margin: 5px;
@@ -318,7 +316,7 @@ form textarea {
   display: none;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;  
+  background-color: #ffffff;
   /*Pour centrer la modale*/
   position: fixed;
   top: 50%;
@@ -327,39 +325,39 @@ form textarea {
 }
 /*content modal*/
 .lightbox-modal {
-  width: 1242px;
-  height: 900px;
+  width: 1200px;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 35px;
-  margin: auto; 
+  margin: auto;
 }
 
 .close-lightbox {
   position: absolute;
-  top: 10px;
-  right: 350px;
+  top: 30px;
+  right: 250px;
 }
 
 .back {
   width: 25px;
-  display: flex;  
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .back img,
-.forward img{
+.forward img {
   width: 48px;
-  height: 48px;  
+  height: 48px;
   cursor: pointer;
 }
 .frame {
   width: 1190px;
-  display: flex;  
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -367,7 +365,7 @@ form textarea {
 .frame img,
 .frame video {
   max-width: 900px;
-  height: 700px;
+  height: 600px;
   object-fit: cover;
   flex-direction: column;
   justify-content: center;
@@ -379,8 +377,8 @@ form textarea {
 }
 .forward {
   width: 25px;
-  display: flex;  
-  flex-direction: column;  
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -388,29 +386,30 @@ form textarea {
 /*css only for large screen  */
 @media screen and (max-width: 1366px) {
   .modal {
-  width: 600px;
-  padding: 25px;
+    width: 600px;
+    padding: 25px;
   }
-  .modal h2, 
+  .modal h2,
   .modal span {
     font-size: 30px;
   }
   .modal label {
     font-size: 20px;
-  } 
+  }
   .modal img {
-    width:30px;
-  } 
-    
+    width: 30px;
+  }
+
   .modal .contact-button {
-  font-size: 16px;
-  margin-top: 10px;
-  width: 140px;
-  height: 50px;  
+    font-size: 16px;
+    margin-top: 10px;
+    width: 140px;
+    height: 50px;
   }
   .lightbox-modal {
+    margin-top: 60px;
     width: 900px;
-    height: 500px;
+    height: 600px;
   }
   .frame {
     width: 850px;
@@ -419,9 +418,10 @@ form textarea {
   .slide video {
     max-width: 650px;
     height: 600px;
-}
-  .close-lightbox {    
-    right: 180px;    
+  }
+  .close-lightbox {
+    top: 20px;
+    right: 180px;
   }
 }
 /*css only for medium screen  */
@@ -431,7 +431,7 @@ form textarea {
     width: 900px;
     min-height: 350px;
   }
-  .photograph-header h1{
+  .photograph-header h1 {
     font-size: 40px;
   }
   main .contact-button {
@@ -440,11 +440,11 @@ form textarea {
   .badge {
     right: 30px;
   }
-  
+
   .modal img {
     width: 20px;
   }
-  
+
   .filter {
     right: 320px;
     top: 20px;
@@ -470,7 +470,7 @@ form textarea {
   }
 }
 
-  /*css only for tablet and Mobile  */
+/*css only for tablet and Mobile  */
 @media screen and (max-width: 834px) {
   .photograph-header article {
     flex-direction: column;
@@ -479,7 +479,7 @@ form textarea {
     text-align: center;
     width: 480px;
   }
-  
+
   .photograph-header img:nth-child(2) {
     align-items: center;
     order: 1;
@@ -490,17 +490,17 @@ form textarea {
     right: 38%;
   }
   .row {
-    width: 20px; 
+    width: 20px;
   }
   .badge {
     width: 250px;
     height: 45px;
     right: 10px;
   }
-  .badge span{
+  .badge span {
     font-size: 16px;
   }
-  .modal{
+  .modal {
     width: 500px;
     min-width: 360px;
   }
@@ -523,10 +523,10 @@ form textarea {
     height: auto;
   }
   .back img,
-.forward img {
-  width: 28px;
-  height: 28px; 
-}  
+  .forward img {
+    width: 28px;
+    height: 28px;
+  }
 }
 @media screen and (max-width: 480px) {
   main .contact-button {

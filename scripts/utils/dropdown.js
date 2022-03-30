@@ -22,6 +22,7 @@ function Dropdown(dropdown) {
     dropdown.dispatchEvent(new Event('change'));
     button.focus();
   };
+
   // Navigation clavier
   const handleKeyDown = (e) => {
     e.preventDefault();
@@ -42,7 +43,6 @@ function Dropdown(dropdown) {
 
   const handleToggleKeyPress = (e) => {
     e.preventDefault();
-
     // echape pour sortir:
     if (e.keyCode === 27) {
       this.toggle(false);
@@ -79,6 +79,8 @@ function Dropdown(dropdown) {
       button.classList.remove('active');
       dropdown.dispatchEvent(new Event('closed'));
       document.removeEventListener('click', handleClickOut);
+      const nextNode = document.querySelector('.portfolio').firstChild;
+      nextNode.focus();
     }
   };
 }
