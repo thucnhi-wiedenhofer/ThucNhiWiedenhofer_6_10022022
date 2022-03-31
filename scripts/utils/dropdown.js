@@ -23,6 +23,7 @@ function Dropdown(dropdown) {
     button.focus();
   };
 
+  
   // Navigation clavier
   const handleKeyDown = (e) => {
     e.preventDefault();
@@ -75,12 +76,11 @@ function Dropdown(dropdown) {
       menu.children[0].focus();
       document.addEventListener('click', handleClickOut);
       dropdown.dispatchEvent(new Event('opened'));
+      
     } else {
       button.classList.remove('active');
       dropdown.dispatchEvent(new Event('closed'));
-      document.removeEventListener('click', handleClickOut);
-      const nextNode = document.querySelector('.portfolio').firstChild;
-      nextNode.focus();
+      document.removeEventListener('click', handleClickOut);      
     }
   };
 }
