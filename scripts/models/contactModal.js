@@ -19,10 +19,7 @@ function contactForm(data) {
     const closeIcon = document.createElement('img');
     closeIcon.setAttribute('src', './assets/icons/close.svg');
     closeIcon.setAttribute('onclick', 'closeModal()');
-    closeIcon.setAttribute(
-      'aria-label',
-      'fermer le formulaire de contact avec la touche echap',
-    );
+    closeIcon.setAttribute('alt', 'fermer le formulaire de contact avec la touche echap');
 
     const span = document.createElement('span');
     span.textContent = name;
@@ -34,12 +31,10 @@ function contactForm(data) {
     const firstnameLabel = document.createElement('label');
     firstnameLabel.textContent = 'Prénom';
     firstnameLabel.setAttribute('for', 'firstname');
-    firstnameLabel.setAttribute('id', 'firstname');
     const firstnameInput = document.createElement('input');
     firstnameInput.setAttribute('type', 'text');
     firstnameInput.setAttribute('name', 'firstname');
     firstnameInput.setAttribute('id', 'firstname');
-    firstnameInput.setAttribute('aria-labelledBy', 'firstname');
 
     const lastData = document.createElement('div');
     lastData.classList.add('formData');
@@ -48,11 +43,10 @@ function contactForm(data) {
     const lastnameLabel = document.createElement('label');
     lastnameLabel.textContent = 'Nom';
     lastnameLabel.setAttribute('for', 'lastname');
-    lastnameLabel.setAttribute('id', 'lastname');
     const lastnameInput = document.createElement('input');
     lastnameInput.setAttribute('type', 'text');
     lastnameInput.setAttribute('name', 'lastname');
-    lastnameInput.setAttribute('aria-labelledBy', 'lastname');
+    lastnameInput.setAttribute('id', 'lastname');
 
     const emailData = document.createElement('div');
     emailData.classList.add('formData');
@@ -61,11 +55,10 @@ function contactForm(data) {
     const emailLabel = document.createElement('label');
     emailLabel.textContent = 'Email';
     emailLabel.setAttribute('for', 'email');
-    emailLabel.setAttribute('id', 'email');
     const emailInput = document.createElement('input');
     emailInput.setAttribute('type', 'email');
     emailInput.setAttribute('name', 'email');
-    emailInput.setAttribute('aria-labelledBy', 'email');
+    emailInput.setAttribute('id', 'email');
 
     const messageData = document.createElement('div');
     messageData.classList.add('formData');
@@ -74,10 +67,9 @@ function contactForm(data) {
     const messageLabel = document.createElement('label');
     messageLabel.textContent = 'Votre Message';
     messageLabel.setAttribute('for', 'message');
-    messageLabel.setAttribute('id', 'message');
     const textarea = document.createElement('textarea');
     textarea.setAttribute('name', 'message');
-    textarea.setAttribute('aria-labelledBy', 'message');
+    textarea.setAttribute('id', 'message');
 
     const submit = document.createElement('button');
     submit.setAttribute('type', 'submit');

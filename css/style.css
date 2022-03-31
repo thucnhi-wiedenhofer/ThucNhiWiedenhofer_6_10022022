@@ -1,9 +1,9 @@
-@import url('photographer.css');
+@import url("photographer.css");
 
 :root {
   --primary: #901c1c;
   --secondary: #d3573c;
-  --tertiary: #DB8876;
+  --tertiary: #db8876;
   --grey: #525252;
   --beige: #fafafa;
   --black: #000000;
@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   margin: 0;
   padding: 0;
   font-size: 18px;
@@ -69,7 +69,7 @@ h3 {
   margin: 10px;
 }
 
-h4 {
+.photographer_section h3 {
   color: var(--primary);
   font-size: 13px;
   font-weight: 400;
@@ -151,7 +151,7 @@ a {
   h1 {
     font-size: 25px;
   }
-  h2 {
+  .photographer_section h2 {
     font-size: 30px !important;
   }
 }

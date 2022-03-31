@@ -14,10 +14,10 @@ function photographerProfil(data) {
     article.setAttribute('aria-label', `Fiche du photographe ${name}`);
 
     const div = document.createElement('div');
-    const h1 = document.createElement('h1');
-    h1.textContent = name;
-    h1.setAttribute('role', 'heading');
-    h1.setAttribute('aria-label', `photographe ${name}`);
+    const h2 = document.createElement('h2');
+    h2.textContent = name;
+    h2.setAttribute('role', 'heading');
+    h2.setAttribute('aria-label', `photographe ${name}`);
 
     const h3 = document.createElement('h3');
     h3.textContent = `${city}, ${country}`;
@@ -27,7 +27,7 @@ function photographerProfil(data) {
     img.setAttribute('src', picture);
     img.setAttribute('alt', `portrait de ${name}`);
 
-    div.appendChild(h1);
+    div.appendChild(h2);
     div.appendChild(h3);
     div.appendChild(p);
     article.appendChild(div);

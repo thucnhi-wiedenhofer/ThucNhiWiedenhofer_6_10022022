@@ -14,10 +14,9 @@ function slideFactory(data) {
     } else if (video) {
       const film = document.createElement('video');
       film.setAttribute('src', `assets/images/${video}`);
-      film.setAttribute('alt', `${title}`);
-      film.setAttribute('controls', 'true');
-      film.setAttribute('autoplay', 'true');
-      film.setAttribute('loop', 'true');
+      film.setAttribute('controls', 'controls');
+      film.setAttribute('autoplay', 'autoplay');
+      film.setAttribute('loop', 'loop');
       slide.appendChild(film);
     }
     const h3 = document.createElement('h3');

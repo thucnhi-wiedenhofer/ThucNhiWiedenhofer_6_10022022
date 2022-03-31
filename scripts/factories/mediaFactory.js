@@ -22,7 +22,7 @@ function mediaFactory(data) {
     } else if (video) {
       const film = document.createElement('video');
       film.setAttribute('src', `assets/images/${video}`);
-      film.setAttribute('alt', `${title}`);
+      film.setAttribute('aria-label', `${title}`);
       link.appendChild(film);
     }
     return link;

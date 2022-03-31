@@ -34,7 +34,7 @@ header a {
   margin-top: 40px !important;
 }
 
-.photograph-header h1 {
+.photograph-header h2 {
   font-size: 64px;
   margin-bottom: 0px;
   color: var(--secondary);
@@ -486,8 +486,8 @@ form textarea {
     margin-bottom: 50px;
   }
   main .contact-button {
-    top: 570px;
-    right: 38%;
+    top: 610px;
+    right: 35%;
   }
   .row {
     width: 20px;
