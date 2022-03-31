@@ -2,12 +2,13 @@
 // eslint-disable-next-line no-unused-vars
 function mediaFactory(data) {
   const {
-    index, image, video, title,
+    id, index, image, video, title,
   } = data;
 
   function getMedia() {
     const link = document.createElement('a');
-    link.setAttribute('href', '#');
+    link.setAttribute('id', `link${id}`);
+    link.setAttribute('href', `#link${id}`);
     // ouverture de la lightbox au click de l'image:
     link.setAttribute('onclick', `openLightbox(${index});`);
     // ouverture de la lightbox avec la touche entrée:
@@ -17,12 +18,12 @@ function mediaFactory(data) {
     if (image) {
       const img = document.createElement('img');
       img.setAttribute('src', `assets/images/${image}`);
-      img.setAttribute('alt', `${title}`);
+      img.setAttribute('alt', `image ${title}`);
       link.appendChild(img);
     } else if (video) {
       const film = document.createElement('video');
       film.setAttribute('src', `assets/images/${video}`);
-      film.setAttribute('aria-label', `${title}`);
+      film.setAttribute('aria-label', `vidéo ${title}`);
       link.appendChild(film);
     }
     return link;
